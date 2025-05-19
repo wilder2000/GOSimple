@@ -1,4 +1,4 @@
-module GOSimple
+module github.com/wilder2000/GOSimple
 
 go 1.24.3
 
