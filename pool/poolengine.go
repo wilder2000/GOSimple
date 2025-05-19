@@ -1,8 +1,8 @@
 package pool
 
 import (
-	"GOSimple/glog"
 	"errors"
+	"github.com/wilder2000/GOSimple/glog"
 	"time"
 )
 

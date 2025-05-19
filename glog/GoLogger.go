@@ -1,8 +1,8 @@
 package glog
 
 import (
-	"GOSimple/config"
 	"fmt"
+	"github.com/wilder2000/GOSimple/config"
 	"os"
 
 	"github.com/natefinch/lumberjack"

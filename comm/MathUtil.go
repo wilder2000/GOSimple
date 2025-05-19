@@ -1,13 +1,13 @@
 package comm
 
 import (
-	"GOSimple/glog"
 	"crypto/md5"
 	"database/sql"
 	"database/sql/driver"
 	"encoding/json"
 	"fmt"
 	"github.com/google/uuid"
+	"github.com/wilder2000/GOSimple/glog"
 	"io"
 	"math/rand"
 	"regexp"
