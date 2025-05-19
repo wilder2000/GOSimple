@@ -1,0 +1,36 @@
+application:
+  Port: ":8090"
+  ReadTimeout: 20
+  WriteTimeout: 20
+  ExpireTime: 10
+  DocProcPoolSize: 20
+  MaxCurrThread: 3
+  UserService: false
+  ReportError: false
+  Security:
+    Registration: true
+    MaxTryTimes: 10
+    ForbidAccessTime: 5.0
+  AppSecret:
+    AccessKey: 1233333333
+    SecretKey: hsdf11212
+  minioinfo:
+    account: wilder2000
+    bucketname: docs
+    privateBucket: doc
+    endpoint: http://www.my-docs.cn:9000/
+    password: 2411Killwilder~
+    url: www.my-docs.cn:9000
+  AccessControlAllowOrigin: false
+  AccessControlAllowHost: "*"
+  AccessControlAllowMethods: "POST, GET, OPTIONS"
+  AccessControlAllowHeaders: "Content-Type"
+  Web:
+    vip: "/out/vip"
+    pri: "/out/pri"
+    pub: "/out/pub"
+  StaticDir:
+    RelativePath: "/s"
+    AbsoluteFileDir: "/usr/www"
+    RelativePath2: "/pri"
+    AbsoluteFileDir2: "/usr/www2"

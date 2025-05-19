@@ -1,0 +1,1000 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"T",
+				"Target"
+			],
+			[
+				"App",
+				"AppDir"
+			],
+			[
+				"f",
+				"Fields"
+			],
+			[
+				"in",
+				"interface"
+			],
+			[
+				"print",
+				"Printf"
+			],
+			[
+				"s",
+				"string"
+			],
+			[
+				"ms",
+				"ms-auto"
+			],
+			[
+				"mx",
+				"mx-auto"
+			],
+			[
+				"input-",
+				"input-group-sm"
+			],
+			[
+				"jus",
+				"justify-content-start"
+			],
+			[
+				"bg",
+				"bg-success"
+			],
+			[
+				"ju",
+				"justify-content-start"
+			],
+			[
+				"bg-d",
+				"bg-danger"
+			],
+			[
+				"gb",
+				"bg-black"
+			],
+			[
+				"col",
+				"col-2"
+			],
+			[
+				"h",
+				"hstack"
+			],
+			[
+				"form-control",
+				"form-control-sm"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"con",
+				"container-fluid"
+			],
+			[
+				"m",
+				"mt-1"
+			],
+			[
+				"v",
+				"v-model"
+			],
+			[
+				"old",
+				"oldSel"
+			],
+			[
+				"btn-s",
+				"btn-sm"
+			],
+			[
+				"fo",
+				"form-control"
+			],
+			[
+				"for",
+				"form-control"
+			],
+			[
+				"t",
+				"text"
+			],
+			[
+				"total",
+				"totalTagsOffline"
+			],
+			[
+				"totalOn",
+				"totalOnLine"
+			],
+			[
+				"ch",
+				"checked"
+			],
+			[
+				"typ",
+				"typeNum"
+			],
+			[
+				"request",
+				"requestSnap"
+			],
+			[
+				"btn",
+				"btn-info"
+			],
+			[
+				"olo",
+				"onload"
+			],
+			[
+				"de",
+				"devicename"
+			],
+			[
+				"deivc",
+				"deviceName"
+			],
+			[
+				"modal-di",
+				"modal-dialog-scrollable"
+			],
+			[
+				"lo",
+				"loadToken"
+			],
+			[
+				"device",
+				"deviceid"
+			],
+			[
+				"my",
+				"my-auto"
+			],
+			[
+				"te",
+				"text-white"
+			],
+			[
+				"wh",
+				"white"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"fs",
+				"fs-6"
+			],
+			[
+				"dev",
+				"deviceName"
+			],
+			[
+				"pl",
+				"player"
+			],
+			[
+				"to",
+				"total"
+			],
+			[
+				"reques",
+				"requestPage"
+			],
+			[
+				"text",
+				"text-danger"
+			],
+			[
+				"status",
+				"statusQueryOffLine"
+			],
+			[
+				"bg-s",
+				"bg-secondary"
+			],
+			[
+				"pe",
+				"pe-auto"
+			],
+			[
+				"me",
+				"me-5"
+			],
+			[
+				"strin",
+				"stringify"
+			],
+			[
+				"tex",
+				"textarea"
+			],
+			[
+				"A",
+				"AttachObject"
+			],
+			[
+				"J",
+				"JSON"
+			],
+			[
+				"gr",
+				"grpObj"
+			],
+			[
+				"text-w",
+				"text-white"
+			],
+			[
+				"TE",
+				"text-center"
+			],
+			[
+				"player",
+				"playerObject"
+			],
+			[
+				"jb",
+				"jbPlayer1"
+			],
+			[
+				"sta",
+				"statusText"
+			],
+			[
+				"sts",
+				"statusText"
+			],
+			[
+				"statu",
+				"statusText"
+			],
+			[
+				"P",
+				"PLayer"
+			],
+			[
+				"st",
+				"status"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ca",
+				"cameraName"
+			],
+			[
+				"S",
+				"string"
+			],
+			[
+				"cu",
+				"currPlayer"
+			],
+			[
+				"nu",
+				"num"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
+				"off",
+				"offcanvas-xl"
+			],
+			[
+				"C",
+				"CLASS_CLOSE_WIN"
+			],
+			[
+				"use",
+				"useTemplateRef"
+			],
+			[
+				"b",
+				"btn-outline-secondary"
+			],
+			[
+				"btn-outline-d",
+				"btn-outline-dark"
+			],
+			[
+				"btn-out",
+				"btn-outline-light"
+			],
+			[
+				"offcanvas-b",
+				"offcanvas-bottom"
+			],
+			[
+				"px",
+				"px-2"
+			],
+			[
+				"g",
+				"gap-5"
+			],
+			[
+				"statusQueryO",
+				"statusQueryOffLine"
+			],
+			[
+				"ali",
+				"align-self-center"
+			],
+			[
+				"text-s",
+				"text-success"
+			],
+			[
+				"load",
+				"loadAllCamera"
+			],
+			[
+				"som",
+				"someQuerys"
+			],
+			[
+				"query",
+				"queryPara"
+			],
+			[
+				"btn-S",
+				"btn-success"
+			],
+			[
+				"BG",
+				"bg-info"
+			],
+			[
+				"chan",
+				"channelId"
+			],
+			[
+				"ip",
+				"ipcList"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"check",
+				"checkid"
+			],
+			[
+				"bg-i",
+				"bg-info-subtle"
+			],
+			[
+				"ret",
+				"retObj"
+			],
+			[
+				"o",
+				"objectid"
+			],
+			[
+				"object",
+				"objectid"
+			],
+			[
+				"fl",
+				"flex-wrap"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"ye",
+				"yellowgreen"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"d-",
+				"d-flex"
+			],
+			[
+				"tag",
+				"tagList"
+			],
+			[
+				"btn-ou",
+				"btn-outline-info"
+			],
+			[
+				"ga",
+				"gap-2"
+			],
+			[
+				"pb",
+				"pb-1"
+			],
+			[
+				"j",
+				"justify-content-center"
+			],
+			[
+				"im",
+				"img"
+			],
+			[
+				"btn-",
+				"btn-info"
+			],
+			[
+				"btn-l",
+				"btn-link"
+			],
+			[
+				"p",
+				"p-2"
+			],
+			[
+				"he",
+				"header"
+			],
+			[
+				"Ev",
+				"EventDetail"
+			],
+			[
+				"col-",
+				"col-auto"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
+				"val",
+				"value2"
+			],
+			[
+				"collapse",
+				"collapse-horizontal"
+			],
+			[
+				"bt",
+				"btn-danger"
+			],
+			[
+				"l",
+				"large"
+			],
+			[
+				"mb",
+				"mb-2"
+			],
+			[
+				"just",
+				"justify-content-center"
+			],
+			[
+				"d",
+				"d-flex"
+			],
+			[
+				"ro",
+				"roi_list_end"
+			],
+			[
+				"di",
+				"div"
+			],
+			[
+				"text-c",
+				"text-center"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"EV",
+				"EventCode"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"form",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"for",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"bor",
+				"Preferences: Browse Packages"
+			],
+			[
+				"format",
+				"Preferences: Formatter Settings"
+			],
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"listp",
+				"Package Control: List Packages"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"from",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"rmove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Virtu",
+				"SublimeREPL: Python - virtualenv"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"live",
+				"Live Server: Stop"
+			],
+			[
+				"Live",
+				"Live Server: Start"
+			],
+			[
+				"Op",
+				"Live Server: Open In Browser"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indent XML"
+			],
+			[
+				"bash",
+				"Set Syntax: Bash"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 475.0,
+		"history":
+		[
+			"view.run_command(\"htmlprettify\")",
+			"os.system('clear')",
+			"os.system('cls')",
+			"cls",
+			"clear",
+			"view.run_command(\"htmlprettify\")"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/cygwin64/home/code/GOSimple",
+		"/C/cygwin64/home/code/GOSimple/comm",
+		"/C/cygwin64/home/code/GOSimple/config",
+		"/C/cygwin64/home/code/GOSimple/log",
+		"/C/cygwin64/home/code/GOSimple/pool"
+	],
+	"file_history":
+	[
+		"/C/cygwin64/home/code/GOSimple/log/Config.go",
+		"/C/cygwin64/home/code/GOSimple/comm/MathUtil.go",
+		"/C/cygwin64/home/code/GOSimple/gosimple.sublime-project",
+		"/C/cygwin64/home/code/GOSimple/log/GoLogger.go",
+		"/C/cygwin64/home/code/GOSimple/pool/poolengine.go",
+		"/C/cygwin64/home/code/gogo/http/ie-controller.go",
+		"/C/cygwin64/home/code/gogo/http/import-controller.go",
+		"/C/cygwin64/home/code/gogo/server/httpserver.go",
+		"/C/cygwin64/home/code/gogo/sys/mif/common.go",
+		"/C/cygwin64/home/code/gogo/go.mod",
+		"/C/cygwin64/home/code/gogo/sys/mif/portal-controller.go",
+		"/C/cygwin64/home/code/gogo/sys/mif/import-manager.go",
+		"/C/cygwin64/home/code/gogo/http/import-manager.go",
+		"/C/cygwin64/home/code/gogo/comm/cache-info.go",
+		"/C/cygwin64/home/code/gogo/sys/sm/user-manage.go",
+		"/C/cygwin64/home/code/gogo/http/http-command.go",
+		"/C/cygwin64/home/code/gogo/http/comm.go",
+		"/C/cygwin64/home/code/gogo/sys/sm/role-manage.go",
+		"/C/wh/home/Administrator/code/gogo/go.sum",
+		"/C/cygwin64/home/code/gogo/config/config.go",
+		"/C/cygwin64/home/code/gogo/config/SysInfo.go",
+		"/C/Program Files/gopath/pkg/mod/gorm.io/gorm@v1.25.7-0.20240204074919-46816ad31dde/chainable_api.go",
+		"/C/cygwin64/home/code/gogo/sys/sm/role-query.go",
+		"/C/cygwin64/home/code/gogo/http/query.go",
+		"/C/work/01 项目/01 成都项目1/六大应用/ST/燧原项目四大业务场景接口文档参考0515/coc_人群过密消息.json",
+		"/C/cygwin64/home/code/gogo/sys/mif/mif-common.go",
+		"/C/Program Files/gopath/pkg/mod/gorm.io/gorm@v1.25.7-0.20240204074919-46816ad31dde/finisher_api.go",
+		"/C/test/sh_gb/0113/消息.json",
+		"/C/cygwin64/home/code/gogo/image/image-tools.go",
+		"/C/work/01 项目/01 成都项目1/六大应用/大人流/人员检测/data2.json",
+		"/C/test/sh_gb/0113/大客流-天府四街吉泰路口_算法测推送记录.txt",
+		"/C/Users/hong.wang/Documents/WeChat Files/wxid_8nbbyhimgs0d22/FileStorage/File/2025-01/大客流-天府四街吉泰路口_算法测推送记录.txt",
+		"/C/cygwin64/home/code/gogo/installto_ramsvr.sh",
+		"/C/cygwin64/home/code/gogo/image/image-tools",
+		"/C/cygwin64/home/code/gogo/application.go",
+		"/C/cygwin64/home/code/gogo/config/ViperConfigFile.go",
+		"/C/Program Files/Go/src/fmt/print.go",
+		"/C/test/sh_gb/6966_ok.txt",
+		"/C/test/sh_gb/6966_error.txt",
+		"/C/test/sh_gb/6966_error2.txt",
+		"/C/work/01 项目/01 成都项目1/运维/5G专线的ip和网关.txt",
+		"/C/test/sh_gb/New Folder/12-249.txt",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/cygwin64/home/code/event_manager/vite.config.ts",
+		"/C/cygwin64/home/code/event_manager/tsconfig.json",
+		"/C/cygwin64/home/code/event_manager/src/camera_manager.ts",
+		"/C/cygwin64/home/code/event_manager/src/views/CameraList.vue",
+		"/C/cygwin64/home/code/event_manager/src/comm.ts",
+		"/C/cygwin64/home/code/event_manager/index.html",
+		"/C/Users/hong.wang/Downloads/data (1).json",
+		"/C/Users/hong.wang/Downloads/data.json",
+		"/C/soft/hz/readme.md",
+		"/C/cygwin64/home/code/event_manager/src/views/CameraOriginList.vue",
+		"/C/cygwin64/home/code/event_manager/package.json",
+		"/C/cygwin64/home/code/videotool/conf/Application.yaml",
+		"/C/work/01 项目/01 成都项目1/六大应用/ST/智慧教育构造数据/main.go",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/CodeFormatter.sublime-settings",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/README.md",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/Default (Windows).sublime-keymap",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Formatter/README.md",
+		"/C/cygwin64/home/code/event_manager/src/App.vue.js",
+		"/C/cygwin64/home/code/event_manager/src/main.js",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
+		"/C/Users/hong.wang/Documents/WeChat Files/wxid_8nbbyhimgs0d22/FileStorage/File/2024-11/未来科技城数据.txt",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/Default (Windows).sublime-keymap",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/JavascriptBeautify.sublime-settings",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/Default (Windows).sublime-keymap",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/.jsbeautifyrc",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/HTMLPrettify.sublime-settings",
+		"/C/cygwin64/home/code/event_manager/src/api.ts",
+		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.min.js",
+		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.js",
+		"/C/Users/hong.wang/Downloads/GeneralPlayer_26515/GeneralPlayer_26515/使用说明（必看）.TXT",
+		"/C/cygwin64/home/soft/ffmpeg/pl1.sh",
+		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Installed Packages/VueFormatter.sublime-package/.vuebeautifyrc",
+		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/一阶段平台账号.txt",
+		"/C/cygwin64/home/code/event_manager/src/views/EventLogList.vue",
+		"/C/cygwin64/home/code/event_manager/src/globalconfig.ts",
+		"/C/work/01 项目/01 成都项目1/六大应用/未来城/科教园物业人员名单.txt",
+		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/test1/config.json",
+		"/C/cygwin64/home/code/event_manager/src/imgFormat.ts",
+		"/C/cygwin64/home/code/event_manager/src/main.ts",
+		"/C/cygwin64/home/code/event_manager/db/test.sql",
+		"/C/cygwin64/home/code/event_manager/db/update.sql",
+		"/C/work/01 项目/01 成都项目1/六大应用/未来城/城市安全算法.txt",
+		"/C/cygwin64/home/code/event_manager/src/views/EventDetail.vue",
+		"/C/cygwin64/home/code/event_manager/src/views/EventShow.vue",
+		"/C/cygwin64/home/code/event_manager/src/http.ts",
+		"/C/cygwin64/home/code/event_manager/src/views/Login.vue",
+		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/test1/config.ini",
+		"/C/work/01 项目/01 成都项目1/项目账号.txt",
+		"/C/cygwin64/home/code/httphandler/go.mod",
+		"/C/cygwin64/home/code/rtsp_study/install.sh",
+		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/pasword.txt",
+		"/C/cygwin64/home/code/httphandler/buildLinux.sh",
+		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/新建文本文档.txt",
+		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/deal(1)/config.json",
+		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/deal(1)/config.ini",
+		"/C/cygwin64/home/code/event_manager/src/components/Jessibuca.vue",
+		"/C/cygwin64/home/code/event_manager/src/events.ts",
+		"/C/cygwin64/home/code/event_manager/db/jiaozhi_park.sql",
+		"/C/Users/hong.wang/Downloads/data (3).json",
+		"/C/cygwin64/home/code/videotool/application.log",
+		"/C/cygwin64/home/code/event_manager/src/views/HomeView.vue",
+		"/C/cygwin64/home/code/event_manager/src/views/CameraPlay.vue",
+		"/C/cygwin64/home/code/event_manager/db/init.sql",
+		"/C/Users/hong.wang/Downloads/JessibucaDemo.vue",
+		"/C/cygwin64/home/code/event_manager/src/DeXieDatabase.ts",
+		"/C/cygwin64/home/code/event_manager/src/router/index.ts",
+		"/C/cygwin64/home/code/event_manager/src/views/NavigateBar.vue",
+		"/C/work/01 项目/01 成都项目1/运维/项目平台地址.txt",
+		"/C/Users/hong.wang/Documents/工地接收到消息.json",
+		"/C/cygwin64/home/code/event_manager/src/views/AboutView.vue",
+		"/C/work/01 项目/01 成都项目1/算法验收/算法清单.txt",
+		"/C/Users/hong.wang/Downloads/CameraInfo_20240929164628.csv",
+		"/C/Users/hong.wang/Downloads/CameraInfo_20240929164535.csv",
+		"/C/cygwin64/home/code/event_manager/src/DeXieDatabase.tx",
+		"/C/cygwin64/home/code/event_manager/src/components/DetailJosn.vue",
+		"/C/cygwin64/home/code/event_manager/src/components/FooterBar.vue",
+		"/C/cygwin64/home/code/event_manager/src/components/Pagination.vue",
+		"/C/cygwin64/home/code/event_manager/package-lock.json",
+		"/C/work/01 项目/01 成都项目1/RAM/出店经营有问题的.json",
+		"/C/cygwin64/home/code/event_manager/src/router/index.js.map",
+		"/C/cygwin64/home/code/event_manager/src/uuid.ts",
+		"/C/cygwin64/home/code/event_manager/src/globalconfig.js",
+		"/C/cygwin64/home/code/httphandler/init.sql"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 134.4,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"gorm.io/gorm",
+			"github.com/go-gorm/gorm",
+			"gorm",
+			"RegObject",
+			"minio",
+			"Delete",
+			"ST_PEOPLE_APPEARING",
+			"ST_CROWD_DENSITY",
+			"goin",
+			"Connection Information"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 50.4
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.SFTP":
+	{
+		"height": 42.0
+	},
+	"output.autopep8":
+	{
+		"height": 186.399993896
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 249.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 186.399993896
+	},
+	"pinned_build_system": "Packages/User/go.sublime-build",
+	"project": "gosimple.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
