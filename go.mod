@@ -1,6 +1,6 @@
 module github.com/wilder2000/GOSimple
 
-go 1.24.3
+go 1.23.4
 
 require (
 	github.com/google/uuid v1.6.0
