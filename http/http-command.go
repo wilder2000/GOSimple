@@ -3,6 +3,7 @@ package http
 import (
 	"fmt"
 	hp "net/http"
+	"reflect"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -191,4 +192,26 @@ func (b *AbstractController[T]) Prepare(c *gin.Context) {
 		return
 	}
 
+}
+
+type HttpController struct {
+	Path   string
+	Action gin.HandlerFunc
+}
+
+func RegMapping[M any](c HTTPController[M]) {
+	ctrl := newController(c)
+	glog.Logger.InfoF("Try to regist HTTPController %s ", c.UrlPath())
+	mappings[c.UrlPath()] = ctrl.Prepare
+}
+
+func newController[M any](c HTTPController[M]) *AbstractController[M] {
+	ty := reflect.ValueOf(c)
+	fi := ty.Elem().FieldByName("AbstractController")
+	if fi.Type().ConvertibleTo(reflect.TypeOf(AbstractController[M]{})) {
+		cc := fi.Interface().(AbstractController[M])
+		cc.HTTPController = c
+		return &cc
+	}
+	return nil
 }
