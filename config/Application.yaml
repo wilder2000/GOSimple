@@ -7,6 +7,12 @@ application:
   MaxCurrThread: 3
   UserService: false
   ReportError: false
+  DataSource:
+    dsn: root:enflame@123@tcp(event_db:3306)/eventdb?charset=utf8mb4&parseTime=True&loc=Local
+    maxidleconnections: 10
+    maxopenconnections: 5
+    name: docDatabase
+    type: mysql
   Security:
     Registration: true
     MaxTryTimes: 10
@@ -28,9 +34,6 @@ application:
   Web:
     vip: "/out/vip"
     pri: "/out/pri"
-    pub: "/out/pub"
   StaticDir:
     RelativePath: "/s"
     AbsoluteFileDir: "/usr/www"
-    RelativePath2: "/pri"
-    AbsoluteFileDir2: "/usr/www2"

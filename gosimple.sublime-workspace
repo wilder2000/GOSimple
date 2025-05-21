@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"sp",
+				"Sprintf"
+			],
+			[
+				"pa",
+				"panic"
+			],
+			[
+				"cre",
+				"createSQLiteDbHandler"
+			],
+			[
+				"is",
+				"IsMySQL"
+			],
+			[
+				"A",
+				"AConfig"
+			],
+			[
+				"pack",
+				"package comm"
+			],
+			[
+				"pac",
+				"package comm"
+			],
+			[
 				"T",
 				"Target"
 			],
@@ -218,10 +246,6 @@
 			[
 				"tex",
 				"textarea"
-			],
-			[
-				"A",
-				"AttachObject"
 			],
 			[
 				"J",
@@ -490,35 +514,440 @@
 			[
 				"just",
 				"justify-content-center"
-			],
-			[
-				"d",
-				"d-flex"
-			],
-			[
-				"ro",
-				"roi_list_end"
-			],
-			[
-				"di",
-				"div"
-			],
-			[
-				"text-c",
-				"text-center"
-			],
-			[
-				"sty",
-				"style"
-			],
-			[
-				"EV",
-				"EventCode"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"contents": "Searching 70 files for \"github.com/wilder2000/GOSimple/comm/\" (regex, whole word)\n\nC:\\cygwin64\\home\\code\\GOSimple\\glog\\GoLogger.go:\n    3  import (\n    4  \t\"fmt\"\n    5: \t\"github.com/wilder2000/GOSimple/comm/config\"\n    6  \t\"os\"\n    7  \n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 255,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "sys/mif/portal-controller.go",
+			"settings":
+			{
+				"buffer_size": 7461,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAB4BAAAAAAAAHwEAAAAAAAAAAAAAHwEAAAAAAAAgAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAHgEAAAAAAAAeAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"",
+					null,
+					"AQAAACABAAAAAAAAIQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAIAEAAAAAAAAgAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"left_delete",
+					null,
+					"AQAAACABAAAAAAAAIAEAAAAAAAADAAAA4oCc",
+					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert_snippet",
+					{
+						"contents": "\"$0\""
+					},
+					"AQAAACABAAAAAAAAIgEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAIAEAAAAAAAAgAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"paste",
+					null,
+					"AQAAACEBAAAAAAAAPwEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"insert",
+					{
+						"characters": "/"
+					},
+					"AQAAAD8BAAAAAAAAQAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAPwEAAAAAAAA/AQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					12,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete Line.sublime-macro"
+					},
+					"AQAAAB8BAAAAAAAAHwEAAAAAAAAjAAAACSJnaXRodWIuY29tL3dpbGRlcjIwMDAvR09TaW1wbGUvIgo",
+					"AQAAAAAAAAABAAAAQQEAAAAAAABBAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "db/database-manager.go",
+			"settings":
+			{
+				"buffer_size": 1014,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "glog/GoLogger.go",
+			"settings":
+			{
+				"buffer_size": 1634,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					2,
+					"left_delete",
+					null,
+					"AgAAAD8AAAAAAAAAPwAAAAAAAAAEAAAAY29tbT4AAAAAAAAAPgAAAAAAAAABAAAALw",
+					"AQAAAAAAAAABAAAAPwAAAAAAAABDAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "config/config.go",
+			"settings":
+			{
+				"buffer_size": 1360,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAK4AAAAAAAAArwAAAAAAAAAAAAAArwAAAAAAAACwAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAArgAAAAAAAACuAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAALAAAAAAAAAAAAEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAsAAAAAAAAACwAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 12
+									},
+									"start":
+									{
+										"character": 1,
+										"line": 12
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 23,
+										"line": 12
+									},
+									"start":
+									{
+										"character": 10,
+										"line": 12
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 17,
+										"line": 13
+									},
+									"start":
+									{
+										"character": 4,
+										"line": 13
+									}
+								}
+							}
+						],
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AwAAANgAAAAAAAAA2AAAAAAAAAANAAAAICAgICAgICAgICAgILkAAAAAAAAAuQAAAAAAAAANAAAAICAgICAgICAgICAgILAAAAAAAAAAsAAAAAAAAAABAAAACQ",
+					"AQAAAAAAAAABAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete Line.sublime-macro"
+					},
+					"AQAAAK8AAAAAAAAArwAAAAAAAAAXAAAACVNlY3VyaXR5ICAgICBTZWN1cml0eQo",
+					"AQAAAAAAAAABAAAAxQAAAAAAAADFAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AQAAAIYBAAAAAAAAhwEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAhgEAAAAAAACGAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					19,
+					1,
+					"paste",
+					null,
+					"AQAAAIcBAAAAAAAABAIAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAhwEAAAAAAACHAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					1,
+					"insert",
+					{
+						"characters": "\n\n"
+					},
+					"AgAAAAQCAAAAAAAABQIAAAAAAAAAAAAABQIAAAAAAAAGAgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAABAIAAAAAAAAEAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					22,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 0,
+										"line": 31
+									},
+									"start":
+									{
+										"character": 0,
+										"line": 30
+									}
+								}
+							}
+						],
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AQAAAAYCAAAAAAAABgIAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAABgIAAAAAAAAGAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AgAAAM4AAAAAAAAAzwAAAAAAAAAAAAAAzwAAAAAAAADQAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzgAAAAAAAADOAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					26,
+					1,
+					"paste",
+					null,
+					"AQAAANAAAAAAAAAA9AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA0AAAAAAAAADQAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					28,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 2,
+										"line": 13
+									},
+									"start":
+									{
+										"character": 1,
+										"line": 13
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 24,
+										"line": 13
+									},
+									"start":
+									{
+										"character": 11,
+										"line": 13
+									}
+								}
+							}
+						],
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AgAAANoAAAAAAAAA2gAAAAAAAAANAAAAICAgICAgICAgICAgINAAAAAAAAAA0AAAAAAAAAABAAAACQ",
+					"AQAAAAAAAAABAAAA9AAAAAAAAAD0AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					33,
+					2,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete Line.sublime-macro"
+					},
+					"AgAAAOkBAAAAAAAA6QEAAAAAAAAZAAAACVJlbGF0aXZlUGF0aDIgICAgc3RyaW5nCukBAAAAAAAA6QEAAAAAAAAZAAAACUFic29sdXRlRmlsZURpcjIgc3RyaW5nCg",
+					"AQAAAAAAAAABAAAAAQIAAAAAAAABAgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					35,
+					1,
+					"lsp_apply_document_edit",
+					{
+						"changes":
+						[
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 14,
+										"line": 25
+									},
+									"start":
+									{
+										"character": 13,
+										"line": 25
+									}
+								}
+							},
+							{
+								"newText": "",
+								"range":
+								{
+									"end":
+									{
+										"character": 17,
+										"line": 26
+									},
+									"start":
+									{
+										"character": 16,
+										"line": 26
+									}
+								}
+							}
+						],
+						"process_placeholders": false,
+						"required_view_version": null
+					},
+					"AgAAAOABAAAAAAAA4AEAAAAAAAABAAAAIMQBAAAAAAAAxAEAAAAAAAABAAAAIA",
+					"AQAAAAAAAAABAAAA6QEAAAAAAADpAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "config/Application.yaml",
+			"settings":
+			{
+				"buffer_size": 965,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					17,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete Line.sublime-macro"
+					},
+					"AQAAAIEDAAAAAAAAgQMAAAAAAAAUAAAAICAgIHB1YjogIi9vdXQvcHViIgo",
+					"AQAAAAAAAAABAAAAlAMAAAAAAACUAwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					2,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Delete Line.sublime-macro"
+					},
+					"AgAAAMUDAAAAAAAAxQMAAAAAAAAaAAAAICAgIFJlbGF0aXZlUGF0aDI6ICIvcHJpIgrFAwAAAAAAAMUDAAAAAAAAIgAAACAgICBBYnNvbHV0ZUZpbGVEaXIyOiAiL3Vzci93d3cyIgo",
+					"AQAAAAAAAAABAAAA3gMAAAAAAADeAwAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -701,16 +1130,75 @@
 		"/C/cygwin64/home/code/GOSimple",
 		"/C/cygwin64/home/code/GOSimple/comm",
 		"/C/cygwin64/home/code/GOSimple/config",
-		"/C/cygwin64/home/code/GOSimple/log",
-		"/C/cygwin64/home/code/GOSimple/pool"
+		"/C/cygwin64/home/code/GOSimple/db",
+		"/C/cygwin64/home/code/GOSimple/glog",
+		"/C/cygwin64/home/code/GOSimple/http",
+		"/C/cygwin64/home/code/GOSimple/pool",
+		"/C/cygwin64/home/code/GOSimple/sys",
+		"/C/cygwin64/home/code/GOSimple/sys/mif"
 	],
 	"file_history":
 	[
-		"/C/cygwin64/home/code/GOSimple/log/Config.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/user-manage.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/department-manage.go",
+		"/C/cygwin64/home/code/GOSimple/http/translate.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/role-add.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/pwd-controler.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/checkpwd-controler.go",
+		"/C/cygwin64/home/code/GOSimple/db/SQLite-implement.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/user-query.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/user-profile.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/user-groups.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/user-del.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/role-query.go",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/role-manage.go",
+		"/C/cygwin64/home/code/GOSimple/pool/poolengine.go",
+		"/C/cygwin64/home/code/GOSimple/http/comm.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
+		"/C/cygwin64/home/code/GOSimple/http/httpserver.go",
+		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
+		"/C/cygwin64/home/code/GOSimple/db/database-manager.go",
+		"/C/cygwin64/home/code/GOSimple/db/MySQL-implement.go",
+		"/C/cygwin64/home/code/GOSimple/db/sqlbuilder.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/a_clubdocs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/go.mod",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/portal-controller.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/mif-common.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/handle-create.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/attach-manager.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/common.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/handle-delete.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/handle-query.go",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/handle-update.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/a_clubs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/a_tags.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/comm-model.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/s_debug.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/s_departments.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/s_group.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/s_logs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/sys/db/s_role.gen.go",
+		"/C/cygwin64/home/code/GOSimple/GOSimple",
+		"/C/cygwin64/home/code/GOSimple/glog/GoLogger.go",
+		"/C/cygwin64/home/code/GOSimple/config/Application.yaml",
+		"/C/cygwin64/home/code/GOSimple/config/config.go",
+		"/C/cygwin64/home/code/GOSimple/db/SQLiteDatabase.go",
+		"/C/cygwin64/home/code/GOSimple/db/MySQLDatabase.go",
+		"/C/cygwin64/home/code/GOSimple/glog/Config.go",
+		"/C/cygwin64/home/code/GOSimple/config/SysInfo.go",
+		"/C/cygwin64/home/code/GOSimple/config/log4g.yaml",
+		"/C/cygwin64/home/code/GOSimple/comm/fieldvalid-comm.go",
+		"/C/cygwin64/home/code/GOSimple/db/database.go",
+		"/C/cygwin64/home/code/GOSimple/README.md",
+		"/C/cygwin64/home/code/GOSimple/sys/sm/base-controler.go",
+		"/C/Users/hong.wang/go/pkg/mod/gorm.io/gorm@v1.26.1/gorm.go",
 		"/C/cygwin64/home/code/GOSimple/comm/MathUtil.go",
+		"/C/cygwin64/home/code/GOSimple/comm/uuid-comm.go",
+		"/C/cygwin64/home/code/GOSimple/comm/office-comm.go",
+		"/C/cygwin64/home/code/GOSimple/comm/time-comm.go",
+		"/C/cygwin64/home/code/GOSimple/log/Config.go",
 		"/C/cygwin64/home/code/GOSimple/gosimple.sublime-project",
 		"/C/cygwin64/home/code/GOSimple/log/GoLogger.go",
-		"/C/cygwin64/home/code/GOSimple/pool/poolengine.go",
 		"/C/cygwin64/home/code/gogo/http/ie-controller.go",
 		"/C/cygwin64/home/code/gogo/http/import-controller.go",
 		"/C/cygwin64/home/code/gogo/server/httpserver.go",
@@ -778,66 +1266,11 @@
 		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/.jsbeautifyrc",
 		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/HTMLPrettify.sublime-settings",
 		"/C/cygwin64/home/code/event_manager/src/api.ts",
-		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.min.js",
-		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.js",
-		"/C/Users/hong.wang/Downloads/GeneralPlayer_26515/GeneralPlayer_26515/使用说明（必看）.TXT",
-		"/C/cygwin64/home/soft/ffmpeg/pl1.sh",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Installed Packages/VueFormatter.sublime-package/.vuebeautifyrc",
-		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/一阶段平台账号.txt",
-		"/C/cygwin64/home/code/event_manager/src/views/EventLogList.vue",
-		"/C/cygwin64/home/code/event_manager/src/globalconfig.ts",
-		"/C/work/01 项目/01 成都项目1/六大应用/未来城/科教园物业人员名单.txt",
-		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/test1/config.json",
-		"/C/cygwin64/home/code/event_manager/src/imgFormat.ts",
-		"/C/cygwin64/home/code/event_manager/src/main.ts",
-		"/C/cygwin64/home/code/event_manager/db/test.sql",
-		"/C/cygwin64/home/code/event_manager/db/update.sql",
-		"/C/work/01 项目/01 成都项目1/六大应用/未来城/城市安全算法.txt",
-		"/C/cygwin64/home/code/event_manager/src/views/EventDetail.vue",
-		"/C/cygwin64/home/code/event_manager/src/views/EventShow.vue",
-		"/C/cygwin64/home/code/event_manager/src/http.ts",
-		"/C/cygwin64/home/code/event_manager/src/views/Login.vue",
-		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/test1/config.ini",
-		"/C/work/01 项目/01 成都项目1/项目账号.txt",
-		"/C/cygwin64/home/code/httphandler/go.mod",
-		"/C/cygwin64/home/code/rtsp_study/install.sh",
-		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/pasword.txt",
-		"/C/cygwin64/home/code/httphandler/buildLinux.sh",
-		"/C/work/01 项目/01 成都项目1/测试/终验三方测试/新建文本文档.txt",
-		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/deal(1)/config.json",
-		"/C/work/01 项目/01 成都项目1/六大应用/事件处置/deal(1)/config.ini",
-		"/C/cygwin64/home/code/event_manager/src/components/Jessibuca.vue",
-		"/C/cygwin64/home/code/event_manager/src/events.ts",
-		"/C/cygwin64/home/code/event_manager/db/jiaozhi_park.sql",
-		"/C/Users/hong.wang/Downloads/data (3).json",
-		"/C/cygwin64/home/code/videotool/application.log",
-		"/C/cygwin64/home/code/event_manager/src/views/HomeView.vue",
-		"/C/cygwin64/home/code/event_manager/src/views/CameraPlay.vue",
-		"/C/cygwin64/home/code/event_manager/db/init.sql",
-		"/C/Users/hong.wang/Downloads/JessibucaDemo.vue",
-		"/C/cygwin64/home/code/event_manager/src/DeXieDatabase.ts",
-		"/C/cygwin64/home/code/event_manager/src/router/index.ts",
-		"/C/cygwin64/home/code/event_manager/src/views/NavigateBar.vue",
-		"/C/work/01 项目/01 成都项目1/运维/项目平台地址.txt",
-		"/C/Users/hong.wang/Documents/工地接收到消息.json",
-		"/C/cygwin64/home/code/event_manager/src/views/AboutView.vue",
-		"/C/work/01 项目/01 成都项目1/算法验收/算法清单.txt",
-		"/C/Users/hong.wang/Downloads/CameraInfo_20240929164628.csv",
-		"/C/Users/hong.wang/Downloads/CameraInfo_20240929164535.csv",
-		"/C/cygwin64/home/code/event_manager/src/DeXieDatabase.tx",
-		"/C/cygwin64/home/code/event_manager/src/components/DetailJosn.vue",
-		"/C/cygwin64/home/code/event_manager/src/components/FooterBar.vue",
-		"/C/cygwin64/home/code/event_manager/src/components/Pagination.vue",
-		"/C/cygwin64/home/code/event_manager/package-lock.json",
-		"/C/work/01 项目/01 成都项目1/RAM/出店经营有问题的.json",
-		"/C/cygwin64/home/code/event_manager/src/router/index.js.map",
-		"/C/cygwin64/home/code/event_manager/src/uuid.ts",
-		"/C/cygwin64/home/code/event_manager/src/globalconfig.js",
-		"/C/cygwin64/home/code/httphandler/init.sql"
+		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.min.js"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -852,6 +1285,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"github.com/wilder2000/GOSimple/comm/",
+			"wilder.cn/gogo",
+			"log.",
+			"github\\.com/wilder2000/GOSimple",
+			"wilder.cn/gogo/comm",
+			"log",
 			"gorm.io/gorm",
 			"github.com/go-gorm/gorm",
 			"gorm",
@@ -869,13 +1308,17 @@
 		"regex": true,
 		"replace_history":
 		[
+			"github.com/wilder2000/GOSimple",
+			"glog.",
+			"github.com/wilder2000/GOSimple/comm",
+			"glog"
 		],
 		"reverse": false,
 		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"use_gitignore": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
@@ -883,6 +1326,297 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 255,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										171,
+										207
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								203,
+								203
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								}
+							],
+							"detect_indentation": false,
+							"line_numbers": false,
+							"lsp_uri": "buffer:991",
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sys/mif/portal-controller.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "gopls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/sys/mif/portal-controller.go",
+							"show_definitions": false,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "db/database-manager.go",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "gopls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/db/database-manager.go",
+							"show_definitions": false,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "glog/GoLogger.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "gopls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/glog/GoLogger.go",
+							"show_definitions": false,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/config.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "gopls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/config/config.go",
+							"show_definitions": false,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/Application.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								691,
+								691
+							]
+						],
+						"settings":
+						{
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/config/Application.yaml",
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -953,7 +1687,7 @@
 	"project": "gosimple.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 73.6
 	},
 	"save_all_on_build": true,
 	"select_file":
