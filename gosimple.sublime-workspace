@@ -4,12 +4,84 @@
 		"selected_items":
 		[
 			[
-				"sp",
-				"Sprintf"
+				"wri",
+				"WriteTimeout"
+			],
+			[
+				"Htt",
+				"HttpServerConfig"
+			],
+			[
+				"Http",
+				"HttpServerConfig"
+			],
+			[
+				"sri",
+				"string"
+			],
+			[
+				"A",
+				"Actions"
+			],
+			[
+				"s",
+				"string"
+			],
+			[
+				"in",
+				"interface"
+			],
+			[
+				"In",
+				"InfoF"
+			],
+			[
+				"INf",
+				"InfoF"
 			],
 			[
 				"pa",
 				"panic"
+			],
+			[
+				"Info",
+				"InfoF"
+			],
+			[
+				"Inf",
+				"InfoF"
+			],
+			[
+				"L",
+				"Lookup"
+			],
+			[
+				"T",
+				"Types"
+			],
+			[
+				"I",
+				"InfoF"
+			],
+			[
+				"Sco",
+				"TypesInfo.Scopes"
+			],
+			[
+				"IN",
+				"interface"
+			],
+			[
+				"t",
+				"Types"
+			],
+			[
+				"Qq",
+				"QRequest"
+			],
+			[
+				"sp",
+				"Sprintf"
 			],
 			[
 				"cre",
@@ -20,20 +92,12 @@
 				"IsMySQL"
 			],
 			[
-				"A",
-				"AConfig"
-			],
-			[
 				"pack",
 				"package comm"
 			],
 			[
 				"pac",
 				"package comm"
-			],
-			[
-				"T",
-				"Target"
 			],
 			[
 				"App",
@@ -44,16 +108,8 @@
 				"Fields"
 			],
 			[
-				"in",
-				"interface"
-			],
-			[
 				"print",
 				"Printf"
-			],
-			[
-				"s",
-				"string"
 			],
 			[
 				"ms",
@@ -130,10 +186,6 @@
 			[
 				"for",
 				"form-control"
-			],
-			[
-				"t",
-				"text"
 			],
 			[
 				"total",
@@ -462,489 +514,28 @@
 			[
 				"im",
 				"img"
-			],
-			[
-				"btn-",
-				"btn-info"
-			],
-			[
-				"btn-l",
-				"btn-link"
-			],
-			[
-				"p",
-				"p-2"
-			],
-			[
-				"he",
-				"header"
-			],
-			[
-				"Ev",
-				"EventDetail"
-			],
-			[
-				"col-",
-				"col-auto"
-			],
-			[
-				"string",
-				"stringify"
-			],
-			[
-				"val",
-				"value2"
-			],
-			[
-				"collapse",
-				"collapse-horizontal"
-			],
-			[
-				"bt",
-				"btn-danger"
-			],
-			[
-				"l",
-				"large"
-			],
-			[
-				"mb",
-				"mb-2"
-			],
-			[
-				"just",
-				"justify-content-center"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "Searching 70 files for \"github.com/wilder2000/GOSimple/comm/\" (regex, whole word)\n\nC:\\cygwin64\\home\\code\\GOSimple\\glog\\GoLogger.go:\n    3  import (\n    4  \t\"fmt\"\n    5: \t\"github.com/wilder2000/GOSimple/comm/config\"\n    6  \t\"os\"\n    7  \n\n1 match in 1 file\n",
+			"file": "conf/Application.yaml",
 			"settings":
 			{
-				"buffer_size": 255,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			},
-			"undo_stack":
-			[
-			]
-		},
-		{
-			"file": "sys/mif/portal-controller.go",
-			"settings":
-			{
-				"buffer_size": 7461,
+				"buffer_size": 779,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
-				[
-					3,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAB4BAAAAAAAAHwEAAAAAAAAAAAAAHwEAAAAAAAAgAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAHgEAAAAAAAAeAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					5,
-					1,
-					"",
-					null,
-					"AQAAACABAAAAAAAAIQEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIAEAAAAAAAAgAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					6,
-					1,
-					"left_delete",
-					null,
-					"AQAAACABAAAAAAAAIAEAAAAAAAADAAAA4oCc",
-					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					7,
-					1,
-					"insert_snippet",
-					{
-						"contents": "\"$0\""
-					},
-					"AQAAACABAAAAAAAAIgEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIAEAAAAAAAAgAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					8,
-					1,
-					"paste",
-					null,
-					"AQAAACEBAAAAAAAAPwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					9,
-					1,
-					"insert",
-					{
-						"characters": "/"
-					},
-					"AQAAAD8BAAAAAAAAQAEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAPwEAAAAAAAA/AQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					12,
-					1,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete Line.sublime-macro"
-					},
-					"AQAAAB8BAAAAAAAAHwEAAAAAAAAjAAAACSJnaXRodWIuY29tL3dpbGRlcjIwMDAvR09TaW1wbGUvIgo",
-					"AQAAAAAAAAABAAAAQQEAAAAAAABBAQAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "db/database-manager.go",
-			"settings":
-			{
-				"buffer_size": 1014,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "glog/GoLogger.go",
-			"settings":
-			{
-				"buffer_size": 1634,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			},
-			"undo_stack":
-			[
-				[
-					6,
-					2,
-					"left_delete",
-					null,
-					"AgAAAD8AAAAAAAAAPwAAAAAAAAAEAAAAY29tbT4AAAAAAAAAPgAAAAAAAAABAAAALw",
-					"AQAAAAAAAAABAAAAPwAAAAAAAABDAAAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "config/config.go",
-			"settings":
-			{
-				"buffer_size": 1360,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					3,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAK4AAAAAAAAArwAAAAAAAAAAAAAArwAAAAAAAACwAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAArgAAAAAAAACuAAAAAAAAAAAAAAAAAPC/"
-				],
 				[
 					4,
-					1,
-					"paste",
+					4,
+					"left_delete",
 					null,
-					"AQAAALAAAAAAAAAAAAEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAsAAAAAAAAACwAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					6,
-					1,
-					"lsp_apply_document_edit",
-					{
-						"changes":
-						[
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 2,
-										"line": 12
-									},
-									"start":
-									{
-										"character": 1,
-										"line": 12
-									}
-								}
-							},
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 23,
-										"line": 12
-									},
-									"start":
-									{
-										"character": 10,
-										"line": 12
-									}
-								}
-							},
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 17,
-										"line": 13
-									},
-									"start":
-									{
-										"character": 4,
-										"line": 13
-									}
-								}
-							}
-						],
-						"process_placeholders": false,
-						"required_view_version": null
-					},
-					"AwAAANgAAAAAAAAA2AAAAAAAAAANAAAAICAgICAgICAgICAgILkAAAAAAAAAuQAAAAAAAAANAAAAICAgICAgICAgICAgILAAAAAAAAAAsAAAAAAAAAABAAAACQ",
-					"AQAAAAAAAAABAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					9,
-					1,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete Line.sublime-macro"
-					},
-					"AQAAAK8AAAAAAAAArwAAAAAAAAAXAAAACVNlY3VyaXR5ICAgICBTZWN1cml0eQo",
-					"AQAAAAAAAAABAAAAxQAAAAAAAADFAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AQAAAIYBAAAAAAAAhwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAhgEAAAAAAACGAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					19,
-					1,
-					"paste",
-					null,
-					"AQAAAIcBAAAAAAAABAIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAhwEAAAAAAACHAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					20,
-					1,
-					"insert",
-					{
-						"characters": "\n\n"
-					},
-					"AgAAAAQCAAAAAAAABQIAAAAAAAAAAAAABQIAAAAAAAAGAgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAABAIAAAAAAAAEAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"lsp_apply_document_edit",
-					{
-						"changes":
-						[
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 0,
-										"line": 31
-									},
-									"start":
-									{
-										"character": 0,
-										"line": 30
-									}
-								}
-							}
-						],
-						"process_placeholders": false,
-						"required_view_version": null
-					},
-					"AQAAAAYCAAAAAAAABgIAAAAAAAABAAAACg",
-					"AQAAAAAAAAABAAAABgIAAAAAAAAGAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					25,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAM4AAAAAAAAAzwAAAAAAAAAAAAAAzwAAAAAAAADQAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAzgAAAAAAAADOAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					26,
-					1,
-					"paste",
-					null,
-					"AQAAANAAAAAAAAAA9AAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA0AAAAAAAAADQAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					28,
-					1,
-					"lsp_apply_document_edit",
-					{
-						"changes":
-						[
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 2,
-										"line": 13
-									},
-									"start":
-									{
-										"character": 1,
-										"line": 13
-									}
-								}
-							},
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 24,
-										"line": 13
-									},
-									"start":
-									{
-										"character": 11,
-										"line": 13
-									}
-								}
-							}
-						],
-						"process_placeholders": false,
-						"required_view_version": null
-					},
-					"AgAAANoAAAAAAAAA2gAAAAAAAAANAAAAICAgICAgICAgICAgINAAAAAAAAAA0AAAAAAAAAABAAAACQ",
-					"AQAAAAAAAAABAAAA9AAAAAAAAAD0AAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					33,
-					2,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete Line.sublime-macro"
-					},
-					"AgAAAOkBAAAAAAAA6QEAAAAAAAAZAAAACVJlbGF0aXZlUGF0aDIgICAgc3RyaW5nCukBAAAAAAAA6QEAAAAAAAAZAAAACUFic29sdXRlRmlsZURpcjIgc3RyaW5nCg",
-					"AQAAAAAAAAABAAAAAQIAAAAAAAABAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					35,
-					1,
-					"lsp_apply_document_edit",
-					{
-						"changes":
-						[
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 14,
-										"line": 25
-									},
-									"start":
-									{
-										"character": 13,
-										"line": 25
-									}
-								}
-							},
-							{
-								"newText": "",
-								"range":
-								{
-									"end":
-									{
-										"character": 17,
-										"line": 26
-									},
-									"start":
-									{
-										"character": 16,
-										"line": 26
-									}
-								}
-							}
-						],
-						"process_placeholders": false,
-						"required_view_version": null
-					},
-					"AgAAAOABAAAAAAAA4AEAAAAAAAABAAAAIMQBAAAAAAAAxAEAAAAAAAABAAAAIA",
-					"AQAAAAAAAAABAAAA6QEAAAAAAADpAQAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "config/Application.yaml",
-			"settings":
-			{
-				"buffer_size": 965,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					17,
-					1,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete Line.sublime-macro"
-					},
-					"AQAAAIEDAAAAAAAAgQMAAAAAAAAUAAAAICAgIHB1YjogIi9vdXQvcHViIgo",
-					"AQAAAAAAAAABAAAAlAMAAAAAAACUAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					20,
-					2,
-					"run_macro_file",
-					{
-						"file": "res://Packages/Default/Delete Line.sublime-macro"
-					},
-					"AgAAAMUDAAAAAAAAxQMAAAAAAAAaAAAAICAgIFJlbGF0aXZlUGF0aDI6ICIvcHJpIgrFAwAAAAAAAMUDAAAAAAAAIgAAACAgICBBYnNvbHV0ZUZpbGVEaXIyOiAiL3Vzci93d3cyIgo",
-					"AQAAAAAAAAABAAAA3gMAAAAAAADeAwAAAAAAAAAAAAAAAPC/"
+					"BAAAAMgAAAAAAAAAyAAAAAAAAAABAAAAZccAAAAAAAAAxwAAAAAAAAABAAAAbcYAAAAAAAAAxgAAAAAAAAABAAAAYcUAAAAAAAAAxQAAAAAAAAABAAAAbA",
+					"AQAAAAAAAAABAAAAyQAAAAAAAADJAAAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -1127,18 +718,94 @@
 	},
 	"expanded_folders":
 	[
-		"/C/cygwin64/home/code/GOSimple",
-		"/C/cygwin64/home/code/GOSimple/comm",
-		"/C/cygwin64/home/code/GOSimple/config",
-		"/C/cygwin64/home/code/GOSimple/db",
-		"/C/cygwin64/home/code/GOSimple/glog",
-		"/C/cygwin64/home/code/GOSimple/http",
-		"/C/cygwin64/home/code/GOSimple/pool",
-		"/C/cygwin64/home/code/GOSimple/sys",
-		"/C/cygwin64/home/code/GOSimple/sys/mif"
+		"/C/cygwin64/home/code/GOSimple"
 	],
 	"file_history":
 	[
+		"/C/cygwin64/home/code/GOSimple/app.go",
+		"/C/cygwin64/home/code/GOSimple/database/SQLite-implement.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-dispatcher.go",
+		"/C/cygwin64/home/code/GOSimple/http/mif-controller.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-server.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-pwdcontroler.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-handler.go",
+		"/C/cygwin64/home/code/GOSimple/service/http-service.go",
+		"/C/Users/hong.wang/go/pkg/mod/golang.org/x/tools@v0.21.1-0.20240508182429-e35e4ccd0d2d/go/packages/packages.go",
+		"/C/Program Files/Go/src/go/types/package.go",
+		"/C/Program Files/Go/src/go/types/scope.go",
+		"/C/Program Files/Go/src/go/types/api.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-roleadd.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-rolemanage.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-rolequery.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-userdel.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-usergroups.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-usermanage.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-userquery.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-userrofile.go",
+		"/C/cygwin64/home/code/GOSimple/conf/Application.yaml",
+		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
+		"/C/cygwin64/home/code/GOSimple/service/type_finder.go",
+		"/C/cygwin64/home/code/GOSimple/service/reflect_util.go",
+		"/C/cygwin64/home/code/GOSimple/README.md",
+		"/C/cygwin64/home/code/GOSimple/http/handle-update.go",
+		"/C/cygwin64/home/code/GOSimple/http/handle-create.go",
+		"/C/cygwin64/home/code/GOSimple/http/handle-delete.go",
+		"/C/cygwin64/home/code/GOSimple/http/handle-query.go",
+		"/C/cygwin64/home/code/GOSimple/config/config.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-depart.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-heckpwd.go",
+		"/C/cygwin64/home/code/GOSimple/http/mif-model.go",
+		"/C/cygwin64/home/code/GOSimple/http/user-service.go",
+		"/C/cygwin64/home/code/GOSimple/http/user-logs.go",
+		"/C/cygwin64/home/code/GOSimple/http/user-dao.go",
+		"/C/cygwin64/home/code/GOSimple/http/user-query.go",
+		"/C/cygwin64/home/code/GOSimple/sm/checkpwd-controler.go",
+		"/C/cygwin64/home/code/GOSimple/sm/department-manage.go",
+		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-auth.go",
+		"/C/cygwin64/home/code/GOSimple/http/default-dispatcher.go",
+		"/C/cygwin64/home/code/GOSimple/sm/role-add.go",
+		"/C/cygwin64/home/code/GOSimple/sm/user-manage.go",
+		"/C/cygwin64/home/code/GOSimple/sm/user-profile.go",
+		"/C/cygwin64/home/code/GOSimple/http/mif-query.go",
+		"/C/cygwin64/home/code/GOSimple/http/comm.go",
+		"/C/cygwin64/home/code/GOSimple/http/common.go",
+		"/C/cygwin64/home/code/GOSimple/sm/role-manage.go",
+		"/C/cygwin64/home/code/GOSimple/sm/role-query.go",
+		"/C/cygwin64/home/code/GOSimple/sm/user-del.go",
+		"/C/cygwin64/home/code/GOSimple/sm/user-groups.go",
+		"/C/cygwin64/home/code/GOSimple/sm/user-query.go",
+		"/C/cygwin64/home/code/GOSimple/http/query.go",
+		"/C/cygwin64/home/code/GOSimple/http/httpserver.go",
+		"/C/cygwin64/home/code/GOSimple/http/attach-manager.go",
+		"/C/cygwin64/home/code/GOSimple/http/mif-common.go",
+		"/C/cygwin64/home/code/GOSimple/http/portal-controller.go",
+		"/C/cygwin64/home/code/GOSimple/http/userinput.go",
+		"/C/cygwin64/home/code/GOSimple/mif/common.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_users.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_group.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_groupuser.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_items.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_logs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_manual_users.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_operators.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_resources.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_role.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_rolegroup.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_roleoperator.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_search.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/a_clubdocs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/a_clubs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/a_shares.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/a_tags.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/a_userdocs.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/comm-model.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_debug.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_departments.gen.go",
+		"/C/cygwin64/home/code/GOSimple/db/s_depusers.gen.go",
+		"/C/cygwin64/home/code/GOSimple/glog/GoLogger.go",
+		"/C/cygwin64/home/code/GOSimple/config/Application.yaml",
+		"/C/cygwin64/home/code/GOSimple/sys/mif/portal-controller.go",
 		"/C/cygwin64/home/code/GOSimple/sys/sm/user-manage.go",
 		"/C/cygwin64/home/code/GOSimple/sys/sm/department-manage.go",
 		"/C/cygwin64/home/code/GOSimple/http/translate.go",
@@ -1153,16 +820,11 @@
 		"/C/cygwin64/home/code/GOSimple/sys/sm/role-query.go",
 		"/C/cygwin64/home/code/GOSimple/sys/sm/role-manage.go",
 		"/C/cygwin64/home/code/GOSimple/pool/poolengine.go",
-		"/C/cygwin64/home/code/GOSimple/http/comm.go",
-		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
-		"/C/cygwin64/home/code/GOSimple/http/httpserver.go",
-		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
 		"/C/cygwin64/home/code/GOSimple/db/database-manager.go",
 		"/C/cygwin64/home/code/GOSimple/db/MySQL-implement.go",
 		"/C/cygwin64/home/code/GOSimple/db/sqlbuilder.go",
 		"/C/cygwin64/home/code/GOSimple/sys/db/a_clubdocs.gen.go",
 		"/C/cygwin64/home/code/GOSimple/go.mod",
-		"/C/cygwin64/home/code/GOSimple/sys/mif/portal-controller.go",
 		"/C/cygwin64/home/code/GOSimple/sys/mif/mif-common.go",
 		"/C/cygwin64/home/code/GOSimple/sys/mif/handle-create.go",
 		"/C/cygwin64/home/code/GOSimple/sys/mif/attach-manager.go",
@@ -1179,9 +841,6 @@
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_logs.gen.go",
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_role.gen.go",
 		"/C/cygwin64/home/code/GOSimple/GOSimple",
-		"/C/cygwin64/home/code/GOSimple/glog/GoLogger.go",
-		"/C/cygwin64/home/code/GOSimple/config/Application.yaml",
-		"/C/cygwin64/home/code/GOSimple/config/config.go",
 		"/C/cygwin64/home/code/GOSimple/db/SQLiteDatabase.go",
 		"/C/cygwin64/home/code/GOSimple/db/MySQLDatabase.go",
 		"/C/cygwin64/home/code/GOSimple/glog/Config.go",
@@ -1189,84 +848,8 @@
 		"/C/cygwin64/home/code/GOSimple/config/log4g.yaml",
 		"/C/cygwin64/home/code/GOSimple/comm/fieldvalid-comm.go",
 		"/C/cygwin64/home/code/GOSimple/db/database.go",
-		"/C/cygwin64/home/code/GOSimple/README.md",
 		"/C/cygwin64/home/code/GOSimple/sys/sm/base-controler.go",
-		"/C/Users/hong.wang/go/pkg/mod/gorm.io/gorm@v1.26.1/gorm.go",
-		"/C/cygwin64/home/code/GOSimple/comm/MathUtil.go",
-		"/C/cygwin64/home/code/GOSimple/comm/uuid-comm.go",
-		"/C/cygwin64/home/code/GOSimple/comm/office-comm.go",
-		"/C/cygwin64/home/code/GOSimple/comm/time-comm.go",
-		"/C/cygwin64/home/code/GOSimple/log/Config.go",
-		"/C/cygwin64/home/code/GOSimple/gosimple.sublime-project",
-		"/C/cygwin64/home/code/GOSimple/log/GoLogger.go",
-		"/C/cygwin64/home/code/gogo/http/ie-controller.go",
-		"/C/cygwin64/home/code/gogo/http/import-controller.go",
-		"/C/cygwin64/home/code/gogo/server/httpserver.go",
-		"/C/cygwin64/home/code/gogo/sys/mif/common.go",
-		"/C/cygwin64/home/code/gogo/go.mod",
-		"/C/cygwin64/home/code/gogo/sys/mif/portal-controller.go",
-		"/C/cygwin64/home/code/gogo/sys/mif/import-manager.go",
-		"/C/cygwin64/home/code/gogo/http/import-manager.go",
-		"/C/cygwin64/home/code/gogo/comm/cache-info.go",
-		"/C/cygwin64/home/code/gogo/sys/sm/user-manage.go",
-		"/C/cygwin64/home/code/gogo/http/http-command.go",
-		"/C/cygwin64/home/code/gogo/http/comm.go",
-		"/C/cygwin64/home/code/gogo/sys/sm/role-manage.go",
-		"/C/wh/home/Administrator/code/gogo/go.sum",
-		"/C/cygwin64/home/code/gogo/config/config.go",
-		"/C/cygwin64/home/code/gogo/config/SysInfo.go",
-		"/C/Program Files/gopath/pkg/mod/gorm.io/gorm@v1.25.7-0.20240204074919-46816ad31dde/chainable_api.go",
-		"/C/cygwin64/home/code/gogo/sys/sm/role-query.go",
-		"/C/cygwin64/home/code/gogo/http/query.go",
-		"/C/work/01 项目/01 成都项目1/六大应用/ST/燧原项目四大业务场景接口文档参考0515/coc_人群过密消息.json",
-		"/C/cygwin64/home/code/gogo/sys/mif/mif-common.go",
-		"/C/Program Files/gopath/pkg/mod/gorm.io/gorm@v1.25.7-0.20240204074919-46816ad31dde/finisher_api.go",
-		"/C/test/sh_gb/0113/消息.json",
-		"/C/cygwin64/home/code/gogo/image/image-tools.go",
-		"/C/work/01 项目/01 成都项目1/六大应用/大人流/人员检测/data2.json",
-		"/C/test/sh_gb/0113/大客流-天府四街吉泰路口_算法测推送记录.txt",
-		"/C/Users/hong.wang/Documents/WeChat Files/wxid_8nbbyhimgs0d22/FileStorage/File/2025-01/大客流-天府四街吉泰路口_算法测推送记录.txt",
-		"/C/cygwin64/home/code/gogo/installto_ramsvr.sh",
-		"/C/cygwin64/home/code/gogo/image/image-tools",
-		"/C/cygwin64/home/code/gogo/application.go",
-		"/C/cygwin64/home/code/gogo/config/ViperConfigFile.go",
-		"/C/Program Files/Go/src/fmt/print.go",
-		"/C/test/sh_gb/6966_ok.txt",
-		"/C/test/sh_gb/6966_error.txt",
-		"/C/test/sh_gb/6966_error2.txt",
-		"/C/work/01 项目/01 成都项目1/运维/5G专线的ip和网关.txt",
-		"/C/test/sh_gb/New Folder/12-249.txt",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/C/cygwin64/home/code/event_manager/vite.config.ts",
-		"/C/cygwin64/home/code/event_manager/tsconfig.json",
-		"/C/cygwin64/home/code/event_manager/src/camera_manager.ts",
-		"/C/cygwin64/home/code/event_manager/src/views/CameraList.vue",
-		"/C/cygwin64/home/code/event_manager/src/comm.ts",
-		"/C/cygwin64/home/code/event_manager/index.html",
-		"/C/Users/hong.wang/Downloads/data (1).json",
-		"/C/Users/hong.wang/Downloads/data.json",
-		"/C/soft/hz/readme.md",
-		"/C/cygwin64/home/code/event_manager/src/views/CameraOriginList.vue",
-		"/C/cygwin64/home/code/event_manager/package.json",
-		"/C/cygwin64/home/code/videotool/conf/Application.yaml",
-		"/C/work/01 项目/01 成都项目1/六大应用/ST/智慧教育构造数据/main.go",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/CodeFormatter.sublime-settings",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/CodeFormatter.sublime-settings",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/README.md",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/CodeFormatter/Default (Windows).sublime-keymap",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Formatter/README.md",
-		"/C/cygwin64/home/code/event_manager/src/App.vue.js",
-		"/C/cygwin64/home/code/event_manager/src/main.js",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/JavascriptBeautify.sublime-settings",
-		"/C/Users/hong.wang/Documents/WeChat Files/wxid_8nbbyhimgs0d22/FileStorage/File/2024-11/未来科技城数据.txt",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/Javascript Beautify/Default (Windows).sublime-keymap",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/JavascriptBeautify.sublime-settings",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/HTML-CSS-JS Prettify/Default (Windows).sublime-keymap",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/.jsbeautifyrc",
-		"/C/Users/hong.wang/AppData/Roaming/Sublime Text/Packages/User/HTMLPrettify.sublime-settings",
-		"/C/cygwin64/home/code/event_manager/src/api.ts",
-		"/C/cygwin64/home/code/event_manager/node_modules/bootstrap/dist/js/bootstrap.esm.min.js"
+		"/C/Users/hong.wang/go/pkg/mod/gorm.io/gorm@v1.26.1/gorm.go"
 	],
 	"find":
 	{
@@ -1285,6 +868,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"http.",
+			"interface",
+			"db.",
+			"log.",
+			"http.",
+			"log.",
+			"QueryRequest",
+			"func Where",
+			".Where",
+			"RawSelect",
+			"RawSQL",
+			"SelectPage",
+			"NewPage",
+			"WhereBuild",
+			"db.",
+			"http.",
+			"github.com/wilder2000/GOSimple/db",
+			"\"github.com/wilder2000/GOSimple/db\"",
+			"log.",
+			"\"/sys/db\"",
+			" github.com/wilder2000/GOSimple/sys/db",
 			"github.com/wilder2000/GOSimple/comm/",
 			"wilder.cn/gogo",
 			"log.",
@@ -1308,6 +912,15 @@
 		"regex": true,
 		"replace_history":
 		[
+			"",
+			"dbmodel.",
+			"glog.",
+			"",
+			"glog.",
+			"dbmodel.",
+			"",
+			"github.com/wilder2000/GOSimple/dbmodel",
+			"glog.",
 			"github.com/wilder2000/GOSimple",
 			"glog.",
 			"github.com/wilder2000/GOSimple/comm",
@@ -1328,283 +941,25 @@
 			[
 				{
 					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 255,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										171,
-										207
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								203,
-								203
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								}
-							],
-							"detect_indentation": false,
-							"line_numbers": false,
-							"lsp_uri": "buffer:991",
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "sys/mif/portal-controller.go",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": ".",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "gopls"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/sys/mif/portal-controller.go",
-							"show_definitions": false,
-							"syntax": "Packages/Go/Go.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "db/database-manager.go",
+					"file": "conf/Application.yaml",
 					"selected": true,
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1014,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": ".",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "gopls"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/db/database-manager.go",
-							"show_definitions": false,
-							"syntax": "Packages/Go/Go.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "glog/GoLogger.go",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1634,
+						"buffer_size": 779,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								302,
-								302
+								372,
+								372
 							]
 						],
 						"settings":
 						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": ".",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "gopls"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/glog/GoLogger.go",
-							"show_definitions": false,
-							"syntax": "Packages/Go/Go.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "config/config.go",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1360,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								336,
-								336
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": ".",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "gopls"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/config/config.go",
-							"show_definitions": false,
-							"syntax": "Packages/Go/Go.sublime-syntax",
-							"tab_size": 4
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "config/Application.yaml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 965,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								691,
-								691
-							]
-						],
-						"settings":
-						{
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/config/Application.yaml",
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/conf/Application.yaml",
 							"syntax": "Packages/YAML/YAML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1613,7 +968,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"stack_multiselect": false,
 					"type": "text"
 				}
@@ -1726,7 +1081,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 390.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
