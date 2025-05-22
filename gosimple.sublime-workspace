@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"db",
+				"dbscript"
+			],
+			[
+				"In",
+				"InfoF"
+			],
+			[
+				"S",
+				"Sprintf"
+			],
+			[
+				"s",
+				"string"
+			],
+			[
+				"Inf",
+				"InfoF"
+			],
+			[
+				"e",
+				"ErrorF"
+			],
+			[
+				"tr",
+				"Transaction"
+			],
+			[
+				"packa",
+				"package dbscript"
+			],
+			[
+				"Rou",
+				"RouterGroup"
+			],
+			[
 				"wri",
 				"WriteTimeout"
 			],
@@ -24,16 +60,8 @@
 				"Actions"
 			],
 			[
-				"s",
-				"string"
-			],
-			[
 				"in",
 				"interface"
-			],
-			[
-				"In",
-				"InfoF"
 			],
 			[
 				"INf",
@@ -45,10 +73,6 @@
 			],
 			[
 				"Info",
-				"InfoF"
-			],
-			[
-				"Inf",
 				"InfoF"
 			],
 			[
@@ -356,10 +380,6 @@
 				"cameraName"
 			],
 			[
-				"S",
-				"string"
-			],
-			[
 				"cu",
 				"currPlayer"
 			],
@@ -494,49 +514,21 @@
 			[
 				"tag",
 				"tagList"
-			],
-			[
-				"btn-ou",
-				"btn-outline-info"
-			],
-			[
-				"ga",
-				"gap-2"
-			],
-			[
-				"pb",
-				"pb-1"
-			],
-			[
-				"j",
-				"justify-content-center"
-			],
-			[
-				"im",
-				"img"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "conf/Application.yaml",
+			"file": "dbscript/install.go",
 			"settings":
 			{
-				"buffer_size": 779,
+				"buffer_size": 3874,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			},
 			"undo_stack":
 			[
-				[
-					4,
-					4,
-					"left_delete",
-					null,
-					"BAAAAMgAAAAAAAAAyAAAAAAAAAABAAAAZccAAAAAAAAAxwAAAAAAAAABAAAAbcYAAAAAAAAAxgAAAAAAAAABAAAAYcUAAAAAAAAAxQAAAAAAAAABAAAAbA",
-					"AQAAAAAAAAABAAAAyQAAAAAAAADJAAAAAAAAAAAAAAAAAPC/"
-				]
 			]
 		}
 	],
@@ -718,15 +710,35 @@
 	},
 	"expanded_folders":
 	[
-		"/C/cygwin64/home/code/GOSimple"
+		"/C/cygwin64/home/code/GOSimple",
+		"/C/cygwin64/home/code/GOSimple/comm",
+		"/C/cygwin64/home/code/GOSimple/conf",
+		"/C/cygwin64/home/code/GOSimple/config",
+		"/C/cygwin64/home/code/GOSimple/dbscript",
+		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL",
+		"/C/cygwin64/home/code/GOSimple/http",
+		"/C/cygwin64/home/code/GOSimple/pool",
+		"/C/cygwin64/home/code/GOSimple/service"
 	],
 	"file_history":
 	[
 		"/C/cygwin64/home/code/GOSimple/app.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-service.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-server.go",
+		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL/initdb.sql",
+		"/C/cygwin64/home/code/GOSimple/dbscript/install.go",
+		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
+		"/C/cygwin64/home/code/GOSimple/config/config.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-userservice.go",
+		"/C/cygwin64/home/code/GOSimple/conf/Application.yaml",
+		"/C/cygwin64/home/code/GOSimple/config/SysInfo.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-authdata.go",
+		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL/sm.sql",
+		"/C/Users/hong.wang/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
 		"/C/cygwin64/home/code/GOSimple/database/SQLite-implement.go",
 		"/C/cygwin64/home/code/GOSimple/http/http-dispatcher.go",
 		"/C/cygwin64/home/code/GOSimple/http/mif-controller.go",
-		"/C/cygwin64/home/code/GOSimple/http/http-server.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-pwdcontroler.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-handler.go",
 		"/C/cygwin64/home/code/GOSimple/service/http-service.go",
@@ -742,8 +754,6 @@
 		"/C/cygwin64/home/code/GOSimple/http/sm-usermanage.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-userquery.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-userrofile.go",
-		"/C/cygwin64/home/code/GOSimple/conf/Application.yaml",
-		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
 		"/C/cygwin64/home/code/GOSimple/service/type_finder.go",
 		"/C/cygwin64/home/code/GOSimple/service/reflect_util.go",
 		"/C/cygwin64/home/code/GOSimple/README.md",
@@ -751,7 +761,6 @@
 		"/C/cygwin64/home/code/GOSimple/http/handle-create.go",
 		"/C/cygwin64/home/code/GOSimple/http/handle-delete.go",
 		"/C/cygwin64/home/code/GOSimple/http/handle-query.go",
-		"/C/cygwin64/home/code/GOSimple/config/config.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-depart.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-heckpwd.go",
 		"/C/cygwin64/home/code/GOSimple/http/mif-model.go",
@@ -761,7 +770,6 @@
 		"/C/cygwin64/home/code/GOSimple/http/user-query.go",
 		"/C/cygwin64/home/code/GOSimple/sm/checkpwd-controler.go",
 		"/C/cygwin64/home/code/GOSimple/sm/department-manage.go",
-		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
 		"/C/cygwin64/home/code/GOSimple/http/http-auth.go",
 		"/C/cygwin64/home/code/GOSimple/http/default-dispatcher.go",
 		"/C/cygwin64/home/code/GOSimple/sm/role-add.go",
@@ -841,19 +849,11 @@
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_logs.gen.go",
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_role.gen.go",
 		"/C/cygwin64/home/code/GOSimple/GOSimple",
-		"/C/cygwin64/home/code/GOSimple/db/SQLiteDatabase.go",
-		"/C/cygwin64/home/code/GOSimple/db/MySQLDatabase.go",
-		"/C/cygwin64/home/code/GOSimple/glog/Config.go",
-		"/C/cygwin64/home/code/GOSimple/config/SysInfo.go",
-		"/C/cygwin64/home/code/GOSimple/config/log4g.yaml",
-		"/C/cygwin64/home/code/GOSimple/comm/fieldvalid-comm.go",
-		"/C/cygwin64/home/code/GOSimple/db/database.go",
-		"/C/cygwin64/home/code/GOSimple/sys/sm/base-controler.go",
-		"/C/Users/hong.wang/go/pkg/mod/gorm.io/gorm@v1.26.1/gorm.go"
+		"/C/cygwin64/home/code/GOSimple/db/SQLiteDatabase.go"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -941,31 +941,49 @@
 			[
 				{
 					"buffer": 0,
-					"file": "conf/Application.yaml",
+					"file": "dbscript/install.go",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 779,
+						"buffer_size": 3874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								372,
-								372
+								3352,
+								3352
 							]
 						],
 						"settings":
 						{
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/conf/Application.yaml",
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "gopls"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/dbscript/install.go",
+							"show_definitions": false,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1852.66666667,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1081,7 +1099,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 390.0,
+	"side_bar_width": 382.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

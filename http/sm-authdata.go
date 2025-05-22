@@ -1,9 +1,6 @@
 package http
 
 import (
-	"fmt"
-	"strings"
-
 	"github.com/wilder2000/GOSimple/database"
 	"github.com/wilder2000/GOSimple/glog"
 )

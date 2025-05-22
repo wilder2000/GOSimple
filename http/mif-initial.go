@@ -27,7 +27,6 @@ func init() {
 	RegObject[dbmodel.SDepartment]("depart")
 	RegObject[dbmodel.SDepuser]("depuser")
 
-	RegObject[dbmodel.ATag]("tags")
 	AttachMgr.InitHome()
 }
 func RegObject[T any](t string) {

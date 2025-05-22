@@ -3,7 +3,6 @@ package http
 import (
 	"fmt"
 	hp "net/http"
-	"reflect"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
