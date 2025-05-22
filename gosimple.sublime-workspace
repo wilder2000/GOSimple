@@ -520,12 +520,11 @@
 	"buffers":
 	[
 		{
-			"file": "dbscript/install.go",
+			"file": "go.mod",
 			"settings":
 			{
-				"buffer_size": 3874,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 2849,
+				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
@@ -711,31 +710,27 @@
 	"expanded_folders":
 	[
 		"/C/cygwin64/home/code/GOSimple",
-		"/C/cygwin64/home/code/GOSimple/comm",
-		"/C/cygwin64/home/code/GOSimple/conf",
-		"/C/cygwin64/home/code/GOSimple/config",
-		"/C/cygwin64/home/code/GOSimple/dbscript",
-		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL",
 		"/C/cygwin64/home/code/GOSimple/http",
 		"/C/cygwin64/home/code/GOSimple/pool",
 		"/C/cygwin64/home/code/GOSimple/service"
 	],
 	"file_history":
 	[
+		"/C/cygwin64/home/code/GOSimple/dbscript/install.go",
+		"/C/cygwin64/home/code/GOSimple/http/mif-initial.go",
+		"/C/cygwin64/home/code/GOSimple/http/sm-authdata.go",
+		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
 		"/C/cygwin64/home/code/GOSimple/app.go",
 		"/C/cygwin64/home/code/GOSimple/http/http-service.go",
 		"/C/cygwin64/home/code/GOSimple/http/http-server.go",
 		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL/initdb.sql",
-		"/C/cygwin64/home/code/GOSimple/dbscript/install.go",
 		"/C/cygwin64/home/code/GOSimple/comm/security‌-comm.go",
 		"/C/cygwin64/home/code/GOSimple/config/config.go",
 		"/C/cygwin64/home/code/GOSimple/http/sm-userservice.go",
 		"/C/cygwin64/home/code/GOSimple/conf/Application.yaml",
 		"/C/cygwin64/home/code/GOSimple/config/SysInfo.go",
-		"/C/cygwin64/home/code/GOSimple/http/sm-authdata.go",
 		"/C/cygwin64/home/code/GOSimple/dbscript/MySQL/sm.sql",
 		"/C/Users/hong.wang/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go",
-		"/C/cygwin64/home/code/GOSimple/http/http-command.go",
 		"/C/cygwin64/home/code/GOSimple/database/SQLite-implement.go",
 		"/C/cygwin64/home/code/GOSimple/http/http-dispatcher.go",
 		"/C/cygwin64/home/code/GOSimple/http/mif-controller.go",
@@ -848,8 +843,7 @@
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_group.gen.go",
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_logs.gen.go",
 		"/C/cygwin64/home/code/GOSimple/sys/db/s_role.gen.go",
-		"/C/cygwin64/home/code/GOSimple/GOSimple",
-		"/C/cygwin64/home/code/GOSimple/db/SQLiteDatabase.go"
+		"/C/cygwin64/home/code/GOSimple/GOSimple"
 	],
 	"find":
 	{
@@ -941,49 +935,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "dbscript/install.go",
+					"file": "go.mod",
 					"selected": true,
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3874,
+						"buffer_size": 2849,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3352,
-								3352
+								564,
+								564
 							]
 						],
 						"settings":
 						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": ".",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "gopls"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/dbscript/install.go",
-							"show_definitions": false,
-							"syntax": "Packages/Go/Go.sublime-syntax",
+							"lsp_uri": "file:///C:/cygwin64/home/code/GOSimple/go.mod",
+							"syntax": "Packages/XML/DTD.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1852.66666667,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1060,7 +1036,7 @@
 	"project": "gosimple.sublime-project",
 	"replace":
 	{
-		"height": 73.6
+		"height": 52.8
 	},
 	"save_all_on_build": true,
 	"select_file":
