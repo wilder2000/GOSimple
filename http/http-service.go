@@ -1,9 +1,7 @@
-package service
+package http
 
 import (
 	"time"
-
-	"github.com/wilder2000/GOSimple/http"
 )
 
 type HttpServerConfig struct {
@@ -14,18 +12,25 @@ type HttpServerConfig struct {
 type HttpServer struct {
 	Address       string
 	Config        HttpServerConfig
-	Actions       []http.HttpController
-	NoAuthActions []http.HttpController
+	Actions       []HttpController
+	NoAuthActions []HttpController
 }
 
-func (hs *HttpServer) AppendActions(ac ...http.HttpController) {
+func (hs *HttpServer) AppendActions(ac ...HttpController) {
 	hs.Actions = append(hs.Actions, ac...)
 }
-func (hs *HttpServer) AppendNoAuthActions(ac ...http.HttpController) {
+func (hs *HttpServer) AppendNoAuthActions(ac ...HttpController) {
 	hs.NoAuthActions = append(hs.NoAuthActions, ac...)
 }
+
+// start a http server
 func (hs *HttpServer) Start() {
-	http.StartWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions)
+	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, false)
+}
+
+// install sm database script.
+func (hs *HttpServer) Install() {
+	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, true)
 }
 
 func CreateHttpServer(address string, config ...HttpServerConfig) *HttpServer {
@@ -36,8 +41,8 @@ func CreateHttpServer(address string, config ...HttpServerConfig) *HttpServer {
 	hs := &HttpServer{
 		Config:        defaultConfig,
 		Address:       address,
-		Actions:       make([]http.HttpController, 0),
-		NoAuthActions: make([]http.HttpController, 0),
+		Actions:       make([]HttpController, 0),
+		NoAuthActions: make([]HttpController, 0),
 	}
 	if config != nil && len(config) == 1 {
 		if config[0].ReadTimeout != nil {

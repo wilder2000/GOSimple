@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/wilder2000/GOSimple/service"
+	"github.com/wilder2000/GOSimple/http"
 )
 
 func main() {
 	fmt.Println("GOSimple")
 
-	hs := service.CreateHttpServer(":9090")
+	hs := http.CreateHttpServer(":9090")
 	hs.Start()
 
 }

@@ -14,6 +14,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 	"github.com/wilder2000/GOSimple/config"
+	"github.com/wilder2000/GOSimple/dbscript"
 	"github.com/wilder2000/GOSimple/glog"
 )
 
@@ -59,7 +60,7 @@ func RegMapping[M any](c HTTPController[M]) {
 	mappings[c.UrlPath()] = ctrl.Prepare
 }
 
-func initController(e *gin.Engine) *gin.RouterGroup {
+func initController(e *gin.Engine) (*gin.RouterGroup, []string) {
 	uh := NewUserHandler(UserProxy)
 	e.POST("/api/emllogin", uh.EmailLogin)
 	if config.AConfig.Security.Registration {
@@ -81,29 +82,38 @@ func initController(e *gin.Engine) *gin.RouterGroup {
 	}
 
 	proUrlGrp := e.Group("/api/v1", PreProcess)
-	for path, hl := range mappings {
-		proUrlGrp.POST(path, hl)
-		glog.Logger.InfoF("Mapping=========:%s Function:%s", path, reflect.TypeOf(hl).Name())
+	urlMapping := make([]string, 0)
+
+	registMapping := func(path string, hf gin.HandlerFunc) {
+		proUrlGrp.POST(path, hf)
+		urlMapping = append(urlMapping, path)
+		glog.Logger.InfoF("Mapping=========:%s Function:%s", path, reflect.TypeOf(hf).Name())
 	}
 
-	proUrlGrp.POST("/avatorup", uh.UploadAvatar)
-	proUrlGrp.POST("/requestuser", uh.RequestUser)
-	proUrlGrp.POST("/delaccount", uh.DeleteAccount)
-	proUrlGrp.POST("/modalias", uh.UpdateAliasName)
-	proUrlGrp.POST("/reperror", uh.ReportErrors)
-	proUrlGrp.POST(REQCreate, HandleCreate)
-	proUrlGrp.POST(REQQuery, HandleQuery)
-	proUrlGrp.POST(REQDelete, HandleDelete)
-	proUrlGrp.POST(REQUpdate, HandleUpdate)
-	return proUrlGrp
+	for path, hl := range mappings {
+		registMapping(path, hl)
+	}
+	registMapping("/avatorup", uh.UploadAvatar)
+	registMapping("/requestuser", uh.RequestUser)
+	registMapping("/delaccount", uh.DeleteAccount)
+	registMapping("/modalias", uh.UpdateAliasName)
+	registMapping("/reperror", uh.ReportErrors)
+	registMapping(REQCreate, HandleCreate)
+	registMapping(REQQuery, HandleQuery)
+	registMapping(REQDelete, HandleDelete)
+	registMapping(REQUpdate, HandleUpdate)
+	return proUrlGrp, urlMapping
+}
+func registGinFunc(rg *gin.RouterGroup, path string, hf gin.HandlerFunc) {
+	rg.POST(path, hf)
 }
 
 // Start http server startWebServer func
-func StartWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController) {
+
+func startWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController, install bool) {
 
 	router := gin.Default()
 	staticDir := config.AConfig.StaticDir
-	//web := config.AConfig.Web
 	if web := config.AConfig.Web; web != nil {
 		for k, v := range web {
 			fmt.Printf("web static :%s -> %s\n", k, v)
@@ -154,44 +164,52 @@ func StartWebServer(address string, readout time.Duration, wout time.Duration, a
 	for _, mapping := range noauthActions {
 		noAuthMappings[mapping.Path] = mapping.Action
 	}
-	rr := initController(router)
+	rr, urlList := initController(router)
 	for _, mapping := range actions {
 		glog.Logger.InfoF(" POST Mapping:%s", mapping.Path)
 		rr.POST(mapping.Path, mapping.Action)
 	}
 
-	srv := &gh.Server{
-		Addr:           address,
-		Handler:        router,
-		ReadTimeout:    readout * time.Second,
-		WriteTimeout:   wout * time.Second,
-		MaxHeaderBytes: 1 << 20,
-	}
-	go func() {
-		if err := srv.ListenAndServe(); err != nil && errors.Is(err, gh.ErrServerClosed) {
-			glog.Logger.InfoF("http server error: %s\n", err)
-		} else {
-			glog.Logger.InfoF("GOGO Http Server started success. Binding :%s", address)
+	if !install {
+
+		srv := &gh.Server{
+			Addr:           address,
+			Handler:        router,
+			ReadTimeout:    readout * time.Second,
+			WriteTimeout:   wout * time.Second,
+			MaxHeaderBytes: 1 << 20,
 		}
-	}()
 
-	// Wait for interrupt signal to gracefully shutdown the server with
-	// a timeout of 5 seconds.
-	quit := make(chan os.Signal)
-	// kill (no param) default send syscall.SIGTERM
-	// kill -2 is syscall.SIGINT
-	// kill -9 is syscall.SIGKILL but can't be caught, so don't need to add it
-	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
-	<-quit
-	glog.Logger.Info("Shutting down server...")
-	// The context is used to inform the server it has 5 seconds to finish
-	// the request it is currently handling
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
+		go func() {
+			if err := srv.ListenAndServe(); err != nil && errors.Is(err, gh.ErrServerClosed) {
+				glog.Logger.InfoF("http server error: %s\n", err)
+			} else {
+				glog.Logger.InfoF("Http Server started success. Binding :%s", address)
+			}
+		}()
 
-	if err := srv.Shutdown(ctx); err != nil {
-		glog.Logger.ErrorF("Server forced to shutdown:", err)
+		// Wait for interrupt signal to gracefully shutdown the server with
+		// a timeout of 5 seconds.
+		quit := make(chan os.Signal)
+		// kill (no param) default send syscall.SIGTERM
+		// kill -2 is syscall.SIGINT
+		// kill -9 is syscall.SIGKILL but can't be caught, so don't need to add it
+		signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+		<-quit
+		glog.Logger.Info("Shutting down server...")
+		// The context is used to inform the server it has 5 seconds to finish
+		// the request it is currently handling
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+
+		if err := srv.Shutdown(ctx); err != nil {
+			glog.Logger.ErrorF("Server forced to shutdown:", err)
+		}
+	} else {
+		//install
+		dbscript.Install(urlList)
 	}
 
 	glog.Logger.Info("Server exiting")
+
 }

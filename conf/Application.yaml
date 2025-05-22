@@ -17,6 +17,7 @@ application:
     Registration: true
     MaxTryTimes: 10
     ForbidAccessTime: 5.0
+    DefaultAdminPWD: "admin@123"
   AppSecret:
     AccessKey: 1233333333
     SecretKey: hsdf11212

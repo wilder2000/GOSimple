@@ -40,6 +40,7 @@ type Security struct {
 	Registration     bool
 	MaxTryTimes      int
 	ForbidAccessTime float64
+	DefaultAdminPWD  string
 }
 type StaticDir struct {
 	RelativePath    string
