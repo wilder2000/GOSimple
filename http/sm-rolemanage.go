@@ -7,7 +7,6 @@ import (
 	"github.com/wilder2000/GOSimple/database"
 	"github.com/wilder2000/GOSimple/dbmodel"
 	"github.com/wilder2000/GOSimple/glog"
-	"github.com/wilder2000/GOSimple/http"
 	"math"
 	hp "net/http"
 	"strconv"

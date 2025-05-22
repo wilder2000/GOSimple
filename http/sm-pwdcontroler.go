@@ -2,7 +2,6 @@ package http
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wilder2000/GOSimple/http"
 	hp "net/http"
 )
 

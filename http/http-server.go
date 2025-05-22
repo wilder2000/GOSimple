@@ -38,7 +38,7 @@ var (
 	noAuthMappings = make(map[string]gin.HandlerFunc)
 )
 
-func InitController(e *gin.Engine) *gin.RouterGroup {
+func initController(e *gin.Engine) *gin.RouterGroup {
 	uh := NewUserHandler(UserProxy)
 	e.POST("/api/emllogin", uh.EmailLogin)
 	if config.AConfig.Security.Registration {
@@ -77,8 +77,8 @@ func InitController(e *gin.Engine) *gin.RouterGroup {
 	return proUrlGrp
 }
 
-// Start http server start func
-func Start(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController) {
+// Start http server startWebServer func
+func StartWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController) {
 
 	router := gin.Default()
 	staticDir := config.AConfig.StaticDir
@@ -133,7 +133,7 @@ func Start(address string, readout time.Duration, wout time.Duration, actions []
 	for _, mapping := range noauthActions {
 		noAuthMappings[mapping.Path] = mapping.Action
 	}
-	rr := InitController(router)
+	rr := initController(router)
 	for _, mapping := range actions {
 		glog.Logger.InfoF(" POST Mapping:%s", mapping.Path)
 		rr.POST(mapping.Path, mapping.Action)

@@ -6,7 +6,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/wilder2000/GOSimple/dbmodel"
 	"github.com/wilder2000/GOSimple/glog"
-	"github.com/wilder2000/GOSimple/http"
 )
 
 type UserQueryController struct {

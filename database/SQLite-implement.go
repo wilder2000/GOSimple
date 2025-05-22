@@ -1,7 +1,6 @@
 package database
 
 import (
-	"sync"
 	"time"
 
 	"github.com/wilder2000/GOSimple/config"

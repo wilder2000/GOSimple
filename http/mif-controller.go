@@ -15,7 +15,6 @@ import (
 	"github.com/wilder2000/GOSimple/comm"
 	"github.com/wilder2000/GOSimple/database"
 	"github.com/wilder2000/GOSimple/glog"
-	"github.com/wilder2000/GOSimple/http"
 	"github.com/xuri/excelize/v2"
 )
 
@@ -24,16 +23,16 @@ func DeleteObject[T any](para *DRequest, c *gin.Context) {
 	glog.Logger.InfoF("where map:%v", para.Where)
 	var mt = new(T)
 	db := database.DBHander.Debug()
-	db, err := http.Where(db, para.Where)
+	db, err := Where(db, para.Where)
 	if err != nil {
-		c.JSON(gh.StatusOK, http.FailedResponseCode(1, "", err.Error()))
+		c.JSON(gh.StatusOK, FailedResponseCode(1, "", err.Error()))
 		return
 	}
 	db.Delete(mt)
 	if db.RowsAffected == 1 {
-		c.JSON(gh.StatusOK, http.SuccessResponse("删除成功"))
+		c.JSON(gh.StatusOK, SuccessResponse("删除成功"))
 	} else {
-		c.JSON(gh.StatusOK, http.FailedResponseCode(1, "", db.Error))
+		c.JSON(gh.StatusOK, FailedResponseCode(1, "", db.Error))
 	}
 
 }
@@ -42,16 +41,16 @@ func UpdateObject[T any](para *URequest, c *gin.Context) {
 	glog.Logger.InfoF("field map:%v", para.Fields)
 
 	var mt = new(T)
-	db, err := http.Where(database.DBHander, para.Where)
+	db, err := Where(database.DBHander, para.Where)
 	if err != nil {
-		c.JSON(gh.StatusOK, http.FailedResponseCode(1, "", db.Error))
+		c.JSON(gh.StatusOK, FailedResponseCode(1, "", db.Error))
 		return
 	}
 	db = db.Model(mt).Updates(para.Fields)
 	if db.RowsAffected == 1 {
-		c.JSON(gh.StatusOK, http.SuccessResponse("更新成功"))
+		c.JSON(gh.StatusOK, SuccessResponse("更新成功"))
 	} else {
-		c.JSON(gh.StatusOK, http.FailedResponseCode(1, "", db.Error))
+		c.JSON(gh.StatusOK, FailedResponseCode(1, "", db.Error))
 	}
 
 }
@@ -65,19 +64,19 @@ func CreateObject[T any](para *ARequest, c *gin.Context) {
 	glog.Logger.InfoF("Object string=%s", str)
 	err := json.Unmarshal([]byte(str), &mt)
 	if err != nil {
-		c.JSON(gh.StatusOK, http.FailedResponse(err.Error(), ""))
+		c.JSON(gh.StatusOK, FailedResponse(err.Error(), ""))
 		return
 	}
 	db := database.DBHander.Model(mt).Create(mt)
 	if db.RowsAffected == 1 {
-		c.JSON(gh.StatusOK, http.SuccessResponse("创建成功"))
+		c.JSON(gh.StatusOK, SuccessResponse("创建成功"))
 	} else {
 		errMsg := db.Error.Error()
 		glog.Logger.ErrorF("Add role failed.%s", errMsg)
 		if strings.Index(errMsg, "1062") > 0 {
-			c.JSON(gh.StatusOK, http.FailedResponseCode(http.DataExistFound, "重复约束触发", db.Error.Error()))
+			c.JSON(gh.StatusOK, FailedResponseCode(DataExistFound, "重复约束触发", db.Error.Error()))
 		} else {
-			c.JSON(gh.StatusOK, http.FailedResponse("增加失败", db.Error.Error()))
+			c.JSON(gh.StatusOK, FailedResponse("增加失败", db.Error.Error()))
 		}
 	}
 
@@ -175,7 +174,7 @@ func QueryObject[T any](para *QRequest, c *gin.Context) {
 	res, err := SelectPage[T](para)
 
 	if err != nil {
-		c.JSON(gh.StatusOK, http.FailedResponse("query failed", err))
+		c.JSON(gh.StatusOK, FailedResponse("query failed", err))
 	} else {
 		qres := &QResponse{}
 		qres.PageSize = res.PageSize
@@ -191,7 +190,7 @@ func QueryObject[T any](para *QRequest, c *gin.Context) {
 			createAttachFile(res.Rows, fn)
 
 		}
-		c.JSON(gh.StatusOK, http.SuccessResponse(qres))
+		c.JSON(gh.StatusOK, SuccessResponse(qres))
 	}
 }
 func createAttachFile[T any](data []T, file string) {
