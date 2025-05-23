@@ -17,7 +17,7 @@ const (
 		"      # #   #  #      #      #\n" +
 		"     ##     # #      #      #\n" +
 		"    #       ##      #      #\n"
-	LogoTitle               = "Power by GOGO, A golang base module."
+	LogoTitle               = "Power by GOSimple, A golang base framework."
 	GOGO_HOME_ENV_KEY       = "GOGO_HOME"
 	APP_CONFIG_FILE_ENV_KEY = "GOGO_CONFIG_FILE"
 )

@@ -2,10 +2,9 @@ package dbscript
 
 import (
 	"bufio"
+	"embed"
 	"errors"
 	"fmt"
-	"os"
-	"path/filepath"
 	"strings"
 
 	"github.com/wilder2000/GOSimple/comm"
@@ -30,9 +29,12 @@ const (
 	SQL_8 = `INSERT INTO s_users VALUES ('Administrator','wild.shang@163.com','%s','流星划过黑暗的夜空つ','',0,'%s','%s',2,'','管理员');`
 )
 
+//go:embed MySQL/*
+var initdb_file embed.FS
+
 // 解析SQL文件，返回SQL语句切片
-func parseSQLFile(filename string) ([]string, error) {
-	file, err := os.Open(filename)
+func parseSQLFile() ([]string, error) {
+	file, err := initdb_file.Open("MySQL/initdb.sql")
 	if err != nil {
 		return nil, err
 	}
@@ -65,10 +67,10 @@ func parseSQLFile(filename string) ([]string, error) {
 func Install(authMappings []string) {
 	db := database.DBHander
 
-	homedir := config.AppDir()
+	// homedir := config.AppDir()
 
-	sqlFile := filepath.Join(homedir, "dbscript", "MySQL", "initdb.sql")
-	statements, err := parseSQLFile(sqlFile)
+	// sqlFile := filepath.Join(homedir, "dbscript", "MySQL", "initdb.sql")
+	statements, err := parseSQLFile()
 	if err != nil {
 		panic(err)
 	}
