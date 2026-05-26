@@ -2,10 +2,11 @@ package glog
 
 import (
 	"fmt"
-	"github.com/wilder2000/GOSimple/config"
 	"os"
+	"path/filepath"
 
 	"github.com/natefinch/lumberjack"
+	"github.com/wilder2000/GOSimple/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -20,37 +21,45 @@ var Logger *GLogger
 var LConfig *Config
 
 func init() {
-	Logger = logger()
+	var err error
+	Logger, err = newLogger()
+	if err != nil {
+		panic(fmt.Sprintf("glog init failed: %v", err))
+	}
 }
 
-// Logger 初始化一个日志
-func logger() *GLogger {
-
+func newLogger() (*GLogger, error) {
 	file, err := config.ReadYAML("log4g.yaml", config.ConfDir())
 	if err != nil {
-		fmt.Println("load log config failed.", err)
+		return nil, fmt.Errorf("load log config failed: %w", err)
 	}
-	file.Unmarshal(&LConfig)
+	LConfig = &Config{}
+	if err := file.Unmarshal(LConfig); err != nil {
+		return nil, fmt.Errorf("unmarshal log config failed: %w", err)
+	}
+
+	logPath := LConfig.File
+	if LConfig.Dir != "" {
+		logPath = filepath.Join(LConfig.Dir, LConfig.File)
+	}
 
 	hook := lumberjack.Logger{
-		Filename:   LConfig.File,       //日志文件路径
-		MaxSize:    LConfig.MaxSize,    //在进行切割之前，日志文件的最大大小（以MB为单位
-		MaxAge:     LConfig.MaxAge,     //保留旧文件的最大天数
-		MaxBackups: LConfig.MaxBackups, //保留旧文件的最大个数
-		Compress:   LConfig.Compress,   //是否压缩/归档旧文件
+		Filename:   logPath,
+		MaxSize:    LConfig.MaxSize,
+		MaxAge:     LConfig.MaxAge,
+		MaxBackups: LConfig.MaxBackups,
+		Compress:   LConfig.Compress,
 	}
+
 	var writerSync zapcore.WriteSyncer
 	if LConfig.Console {
-		fmt.Println("console enabled")
 		writerSync = zapcore.NewMultiWriteSyncer(
 			zapcore.AddSync(os.Stdout),
 			zapcore.AddSync(&hook))
 	} else {
-		fmt.Println("console disabled")
 		writerSync = zapcore.AddSync(&hook)
 	}
 
-	// debug->info->warn->error
 	var level zapcore.Level
 	switch LConfig.LogLevel {
 	case LevelDebug:
@@ -72,5 +81,5 @@ func logger() *GLogger {
 	)
 
 	zLog := zap.New(core)
-	return NewGLogger(*zLog)
+	return NewGLogger(*zLog), nil
 }

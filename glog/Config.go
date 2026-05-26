@@ -15,19 +15,26 @@ type Config struct {
 	LogLevel   LoggerLevel `yaml:"logLevel"`
 }
 type GLogger struct {
-	zap.Logger
+	*zap.Logger
+	sugar *zap.SugaredLogger
 }
 
 func NewGLogger(log zap.Logger) *GLogger {
-	theLogger := &GLogger{log}
-	return theLogger
+	return &GLogger{
+		Logger: &log,
+		sugar:  log.Sugar(),
+	}
 }
-func (r GLogger) InfoF(temp string, args ...interface{}) {
-	r.Sugar().Infof(temp, args...)
+
+func (l *GLogger) InfoF(template string, args ...interface{}) {
+	l.sugar.Infof(template, args...)
 }
-func (r GLogger) ErrorF(temp string, args ...interface{}) {
-	r.Sugar().Errorf(temp, args...)
+func (l *GLogger) ErrorF(template string, args ...interface{}) {
+	l.sugar.Errorf(template, args...)
 }
-func (r GLogger) DebugF(temp string, args ...interface{}) {
-	r.Sugar().Debugf(temp, args...)
+func (l *GLogger) DebugF(template string, args ...interface{}) {
+	l.sugar.Debugf(template, args...)
+}
+func (l *GLogger) WarnF(template string, args ...interface{}) {
+	l.sugar.Warnf(template, args...)
 }

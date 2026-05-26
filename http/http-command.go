@@ -127,7 +127,6 @@ func HandlErr(c *gin.Context, err error) {
 	}
 	// validator.ValidationErrors类型错误则进行翻译
 	c.JSON(hp.StatusOK, FailedResponseCode(CommParaFormat, "valid failed", errs))
-	return
 }
 
 type MVCError struct {

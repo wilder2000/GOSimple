@@ -2,6 +2,7 @@ package config
 
 import (
 	"errors"
+
 	"github.com/spf13/viper"
 )
 
@@ -53,6 +54,6 @@ func (c *ViperConfigFile) GetString(key string) string {
 func (c *ViperConfigFile) GetInt(key string) int {
 	return c.configFile.GetInt(key)
 }
-func (c *ViperConfigFile) Unmarshal(conObject interface{}) {
-	c.configFile.Unmarshal(conObject)
+func (c *ViperConfigFile) Unmarshal(conObject interface{}) error {
+	return c.configFile.Unmarshal(conObject)
 }
