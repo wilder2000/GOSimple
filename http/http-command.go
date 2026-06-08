@@ -154,6 +154,11 @@ type HTTPController[T any] interface {
 	Prepare(c *gin.Context)
 	UrlPath() string
 }
+
+type OperatorProvider interface {
+	OperatorId() int32
+}
+
 type AbstractController[T any] struct {
 	HTTPController[T]
 }

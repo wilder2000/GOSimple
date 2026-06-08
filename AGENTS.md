@@ -4,15 +4,17 @@ Simple Go framework / util library. Module: `github.com/wilder2000/GOSimple` (Go
 
 ## Commands
 
-- `go run .` — starts the HTTP server
+- `go run .` — starts the HTTP server (+ admin UI at /admin)
 - `go run . -install YES` — initializes DB schema + seed data
 - `go build .` — builds the binary
+- `cd web && npm install && npm run build` — rebuilds admin frontend
 
 No test/lint/format scripts exist.
 
 ## Architecture
 
-- **Entrypoint**: `app.go` (main), currently a stub — prints "GOSimple" and exits.
+- **Entrypoint**: `main.go` — calls `app.Run()`.
+- **App bootstrap**: `app/app.go` — `Run()` function, importable by external projects.
 - **HTTP**: Gin-based server in `http/` package. JWT auth (`dgrijalva/jwt-go`). Controller registration uses `RegMapping[T](controller)` with reflection-based dispatch. Serves on `:8090` by default (`conf/Application.yaml`).
 - **Config**: Viper loads `conf/Application.yaml` + `conf/log4g.yaml`. Env overrides: `GOGO_HOME` (app dir), `GOGO_CONFIG_FILE` (config filename).
 - **Database**: GORM with MySQL or SQLite (set via `DataSource.type` in config). DB init in `config.init()`, re-loadable via `database.LoadDatabaseConfig()`.

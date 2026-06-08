@@ -67,6 +67,9 @@ func CreateObject[T any](para *ARequest, c *gin.Context) {
 		c.JSON(gh.StatusOK, FailedResponse(err.Error(), ""))
 		return
 	}
+	if fn, ok := TargetPreCreateFunc[para.Target]; ok {
+		fn(mt)
+	}
 	db := database.DBHander.Model(mt).Create(mt)
 	if db.RowsAffected == 1 {
 		c.JSON(gh.StatusOK, SuccessResponse("创建成功"))

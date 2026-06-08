@@ -9,6 +9,7 @@ type CheckPwdController struct {
 	AbstractController[CheckPWD]
 }
 
+func (s CheckPwdController) OperatorId() int32 { return OPER_ID_VIEWER }
 func (s CheckPwdController) UrlPath() string {
 	return "/cpwd"
 }

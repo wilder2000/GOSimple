@@ -21,6 +21,7 @@ import (
 func init() {
 	fmt.Printf("%s\n", config.Logo)
 	fmt.Printf("%s\n", config.LogoTitle)
+	fmt.Printf("GOSimple Admin: http://localhost%s/admin\n", config.AConfig.Port)
 	RegMapping[ChangePWD](new(PwdController))
 	RegMapping[CheckPWD](new(CheckPwdController))
 	RegMapping[QRequest](new(UserQueryController))
@@ -58,6 +59,12 @@ func RegMapping[M any](c HTTPController[M]) {
 	ctrl := newController(c)
 	glog.Logger.InfoF("Try to regist HTTPController %s ", c.UrlPath())
 	mappings[c.UrlPath()] = ctrl.Prepare
+
+	if op, ok := c.(OperatorProvider); ok {
+		RegisterURL(c.UrlPath(), op.OperatorId())
+	} else {
+		RegisterURL(c.UrlPath(), OPER_ID_ADMIN)
+	}
 }
 
 func initController(e *gin.Engine) (*gin.RouterGroup, []string) {
@@ -110,7 +117,7 @@ func registGinFunc(rg *gin.RouterGroup, path string, hf gin.HandlerFunc) {
 
 // Start http server startWebServer func
 
-func startWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController, install bool) {
+func startWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController, install bool, adminHandler gin.HandlerFunc) {
 
 	router := gin.Default()
 	staticDir := config.AConfig.StaticDir
@@ -125,6 +132,12 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 		glog.Logger.InfoF("mapping www url:%s file dir:%s", staticDir.RelativePath, staticDir.AbsoluteFileDir)
 	} else {
 		glog.Logger.InfoF("no mapping www path config.")
+	}
+
+	if adminHandler != nil {
+		router.Any("/admin", adminHandler)
+		router.Any("/admin/*filepath", adminHandler)
+		glog.Logger.InfoF("Admin UI mounted at /admin")
 	}
 
 	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
@@ -164,13 +177,14 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 	for _, mapping := range noauthActions {
 		noAuthMappings[mapping.Path] = mapping.Action
 	}
-	rr, urlList := initController(router)
+	rr, _ := initController(router)
 	for _, mapping := range actions {
 		glog.Logger.InfoF(" POST Mapping:%s", mapping.Path)
 		rr.POST(mapping.Path, mapping.Action)
 	}
 
 	if !install {
+		SyncUrlMappings()
 
 		srv := &gh.Server{
 			Addr:           address,
@@ -207,7 +221,7 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 		}
 	} else {
 		//install
-		dbscript.Install(urlList)
+		dbscript.Install(UrlMappingsGrouped())
 	}
 
 	glog.Logger.Info("Server exiting")

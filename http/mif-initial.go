@@ -7,10 +7,11 @@ import (
 )
 
 var (
-	TargetQueryFunc  = make(map[string]HandleQueryTarget)
-	TargetCreateFunc = make(map[string]HandleCreateTarget)
-	TargetDeleteFunc = make(map[string]HandleDeleteTarget)
-	TargetUpdateFunc = make(map[string]HandleUpdateTarget)
+	TargetQueryFunc     = make(map[string]HandleQueryTarget)
+	TargetCreateFunc    = make(map[string]HandleCreateTarget)
+	TargetDeleteFunc    = make(map[string]HandleDeleteTarget)
+	TargetUpdateFunc    = make(map[string]HandleUpdateTarget)
+	TargetPreCreateFunc = make(map[string]func(interface{}))
 
 	TargetPreUpdateFunc = make(map[string]func())
 	AttachMgr           = AttachManager{}
@@ -18,6 +19,14 @@ var (
 
 func init() {
 	RegObject[dbmodel.SUser]("user")
+	TargetPreCreateFunc["user"] = func(obj interface{}) {
+		if u, ok := obj.(*dbmodel.SUser); ok && u.Password != "" {
+			hashed, err := comm.EPassword(u.Password)
+			if err == nil {
+				u.Password = string(hashed)
+			}
+		}
+	}
 	RegObject[dbmodel.SRole]("role")
 	RegObject[dbmodel.SGroup]("group")
 	RegObject[dbmodel.SGroupuser]("groupuser")
@@ -26,6 +35,13 @@ func init() {
 	RegObject[dbmodel.SRoleoperator]("roleoper")
 	RegObject[dbmodel.SDepartment]("depart")
 	RegObject[dbmodel.SDepuser]("depuser")
+	RegObject[dbmodel.SLog]("log")
+	RegObject[dbmodel.SUrlMapping]("urlmap")
+
+	RegisterURL(REQCreate, OPER_ID_ADMIN)
+	RegisterURL(REQQuery, OPER_ID_ADMIN)
+	RegisterURL(REQUpdate, OPER_ID_ADMIN)
+	RegisterURL(REQDelete, OPER_ID_ADMIN)
 
 	AttachMgr.InitHome()
 }

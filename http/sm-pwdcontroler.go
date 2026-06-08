@@ -9,6 +9,7 @@ type PwdController struct {
 	AbstractController[ChangePWD]
 }
 
+func (s PwdController) OperatorId() int32 { return OPER_ID_VIEWER }
 func (s PwdController) UrlPath() string {
 	return "/pwd"
 }

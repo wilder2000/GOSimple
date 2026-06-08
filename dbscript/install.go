@@ -64,18 +64,14 @@ func parseSQLFile() ([]string, error) {
 	return statements, scanner.Err()
 }
 
-func Install(authMappings []string) {
+func Install(urlMappings map[int32][]string) {
 	db := database.DBHander
 
-	// homedir := config.AppDir()
-
-	// sqlFile := filepath.Join(homedir, "dbscript", "MySQL", "initdb.sql")
 	statements, err := parseSQLFile()
 	if err != nil {
 		panic(err)
 	}
-	authSQLS := generateUrlMappingSQL(authMappings, OPER_ID_ADMIN)
-	// authSQL := generateUrlMappingSQL(authMappings, OPER_ID_VIEWER)
+	authSQLS := generateUrlMappingSQL(urlMappings)
 	terr := db.Transaction(func(tx *gorm.DB) error {
 		//step 1: execute create table sql.
 		for _, stmt := range statements {
@@ -137,11 +133,13 @@ func execOneSQL(db *gorm.DB, sql string) error {
 	}
 	return nil
 }
-func generateUrlMappingSQL(urls []string, operatorID int) []string {
+func generateUrlMappingSQL(grouped map[int32][]string) []string {
 	builder := make([]string, 0)
-	for _, url := range urls {
-		one := fmt.Sprintf("insert into s_urlmappings(operatorid,url) values(%d,'%s');\n", operatorID, url)
-		builder = append(builder, one)
+	for opID, urls := range grouped {
+		for _, url := range urls {
+			one := fmt.Sprintf("insert into s_urlmappings(operatorid,url) values(%d,'%s');\n", opID, url)
+			builder = append(builder, one)
+		}
 	}
 	return builder
 }

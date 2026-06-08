@@ -5,6 +5,7 @@ import (
 )
 
 type AppConfig struct {
+	Port                      string
 	ReadTimeout               time.Duration
 	WriteTimeout              time.Duration
 	PoolSize                  int

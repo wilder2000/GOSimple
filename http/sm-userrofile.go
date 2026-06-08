@@ -13,6 +13,7 @@ type UserProfileController struct {
 	AbstractController[GetRequest]
 }
 
+func (s UserProfileController) OperatorId() int32 { return OPER_ID_VIEWER }
 func (s UserProfileController) UrlPath() string {
 	return "/upro"
 }

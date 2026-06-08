@@ -25,6 +25,8 @@ DROP TABLE IF EXISTS s_roleoperator;
 
 DROP TABLE IF EXISTS s_users;
 
+DROP TABLE IF EXISTS s_urlmappings;
+
 CREATE TABLE s_departments
 (
 id INTEGER AUTO_INCREMENT COMMENT '编号',
@@ -32,14 +34,14 @@ name VARCHAR(50) UNIQUE  COMMENT '组织名称',
 createtime TIMESTAMP COMMENT '创建时间',
 icon VARBINARY(100),
 PRIMARY KEY (id)
-) COMMENT='组织表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='组织表';
 
 CREATE TABLE s_depusers
 (
 userid VARCHAR(50) COMMENT '用户编号',
 departmentid INTEGER COMMENT '组织编号',
 PRIMARY KEY (userid,departmentid)
-) COMMENT='组织成员表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='组织成员表';
 
 CREATE TABLE s_group
 (
@@ -47,14 +49,14 @@ id INTEGER NOT NULL AUTO_INCREMENT,
 name VARCHAR(20) COMMENT '组名',
 createtime TIMESTAMP COMMENT '创建时间',
 PRIMARY KEY (id)
-) COMMENT='用户组';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户组';
 
 CREATE TABLE s_groupuser
 (
 groupid INTEGER COMMENT '组编号',
 userid VARCHAR(50) COMMENT '用户编号',
 PRIMARY KEY (groupid,userid)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE s_items
 (
@@ -62,7 +64,7 @@ id INTEGER AUTO_INCREMENT,
 name VARCHAR(100),
 type INTEGER COMMENT '1、names',
 PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE s_logs
 (
@@ -71,14 +73,14 @@ account VARCHAR(50),
 ip VARCHAR(50),
 logintime TIMESTAMP,
 PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE s_operators
 (
 id INTEGER UNIQUE  COMMENT '功能编号',
 name VARCHAR(20) COMMENT '功能名称',
 PRIMARY KEY (id)
-) COMMENT='操作功能表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='操作功能表';
 
 CREATE TABLE s_resources
 (
@@ -91,7 +93,7 @@ download BOOLEAN COMMENT '用户下载权限',
 PRIMARY KEY (resid,userid)
 ) COMMENT='资源权限表
 
-每一个文档有多个这个对应';
+每一个文档有多个这个对应' ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE s_role
 (
@@ -99,14 +101,14 @@ id INTEGER NOT NULL AUTO_INCREMENT COMMENT '角色编号',
 name VARCHAR(20) UNIQUE  COMMENT '角色名称',
 createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
 PRIMARY KEY (id)
-) COMMENT='角色';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色';
 
 CREATE TABLE s_rolegroup
 (
 roleid INTEGER COMMENT '角色编号',
 groupid INTEGER COMMENT '组编号',
 PRIMARY KEY (roleid,groupid)
-) COMMENT='角色用户组';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色用户组';
 
 CREATE TABLE s_roleoperator
 (
@@ -114,7 +116,7 @@ roleid INTEGER COMMENT '角色编号',
 operatorid INTEGER COMMENT '操作功能的编号',
 acte BOOLEAN COMMENT '是否可以操作',
 PRIMARY KEY (roleid,operatorid)
-) COMMENT='角色功能操作表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色功能操作表';
 
 CREATE TABLE s_users
 (
@@ -130,11 +132,11 @@ sex INTEGER COMMENT '性别：1男，0女，2未知',
 mobile VARCHAR(20),
 aliasname VARCHAR(50),
 PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 CREATE TABLE s_urlmappings
 (
 id INTEGER AUTO_INCREMENT,
 operatorid INTEGER,
 url VARCHAR(255),
 PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
