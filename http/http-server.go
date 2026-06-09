@@ -126,9 +126,17 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 	startTime := time.Now()
 
 	router := gin.Default()
+
+	router.Any("/admin/*filepath", adminHandler)
+	glog.Logger.InfoF("Admin UI mounted at /admin")
+
 	staticDir := config.AConfig.StaticDir
 	if web := config.AConfig.Web; web != nil {
 		for k, v := range web {
+			if strings.TrimLeft(k, "/") == "admin" {
+				glog.Logger.WarnF("Skipping Web config 'admin' mapping at '%s' (built-in admin UI serves /admin). Remove 'admin' entry from config.Web to suppress this warning.", v)
+				continue
+			}
 			fmt.Printf("web static :%s -> %s\n", k, v)
 			router.Static(k, v)
 		}
@@ -139,9 +147,6 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 	} else {
 		glog.Logger.InfoF("no mapping www path config.")
 	}
-
-	router.Any("/admin/*filepath", adminHandler)
-	glog.Logger.InfoF("Admin UI mounted at /admin")
 
 	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 		// your custom format
