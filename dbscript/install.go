@@ -29,8 +29,52 @@ const (
 	SQL_8 = `INSERT INTO s_users VALUES ('Administrator','wild.shang@163.com','%s','流星划过黑暗的夜空つ','',0,'%s','%s',2,'','管理员');`
 )
 
+// ModuleInstallSQL 模块注册的安装 SQL
+type ModuleInstallSQL struct {
+	Name       string
+	Statements []string
+}
+
+var moduleSQLs []ModuleInstallSQL
+
+// RegisterInstallSQL 注册模块安装 SQL
+// 在 -install YES 时，于框架核心表初始化之后自动执行
+func RegisterInstallSQL(name string, sqlText string) {
+	moduleSQLs = append(moduleSQLs, ModuleInstallSQL{
+		Name:       name,
+		Statements: parseSQLStatements(sqlText),
+	})
+	glog.Logger.InfoF("Register module install SQL: %s (%d statements)", name, len(moduleSQLs[len(moduleSQLs)-1].Statements))
+}
+
 //go:embed MySQL/*
 var initdb_file embed.FS
+
+// parseSQLStatements 解析 SQL 文本为语句切片
+func parseSQLStatements(text string) []string {
+	var statements []string
+	var currentStmt strings.Builder
+	scanner := bufio.NewScanner(strings.NewReader(text))
+
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if strings.HasPrefix(line, "--") || line == "" {
+			continue
+		}
+		currentStmt.WriteString(" " + line)
+		if strings.HasSuffix(line, ";") {
+			statements = append(statements, strings.TrimSpace(currentStmt.String()))
+			currentStmt.Reset()
+		}
+	}
+
+	// 处理末尾没有分号的残留语句
+	if currentStmt.Len() > 0 {
+		statements = append(statements, strings.TrimSpace(currentStmt.String()))
+	}
+
+	return statements
+}
 
 // 解析SQL文件，返回SQL语句切片
 func parseSQLFile() ([]string, error) {
@@ -114,6 +158,15 @@ func Install(urlMappings map[int32][]string) {
 		}
 		if err := execOneSQL(tx, fmt.Sprintf(SQL_8, string(hpwd), ntime, ntime)); err != nil {
 			return err
+		}
+		//step 5: execute module install sql.
+		for _, m := range moduleSQLs {
+			glog.Logger.InfoF("Installing module: %s", m.Name)
+			for _, stmt := range m.Statements {
+				if err := execOneSQL(tx, stmt); err != nil {
+					return err
+				}
+			}
 		}
 		return nil
 	})

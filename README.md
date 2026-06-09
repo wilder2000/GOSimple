@@ -22,6 +22,9 @@ cd GOSimple
 go run . -install YES
 ```
 
+> `-install YES` 执行顺序：框架核心表 → URL 映射 → 种子数据 → **模块注册的 SQL**（见[模块安装 SQL](#模块安装-sql)）。
+> 模块的自定义表也可以通过 `init()` + `AutoMigrate` 在启动前自动创建（见[自动建表策略](#自动建表策略)）。
+
 ### 构建前端（可选）
 
 管理后台使用 Vue 3 构建，首次使用前需要编译前端资源：
@@ -589,12 +592,92 @@ config.init() → database.init() → glog.init() → http.init() → modules/*.
 
 ### 自动建表策略
 
+二开模块的表由 `init()` 中的 `AutoMigrate` 自动创建，**早于 `main()` 执行**，不受启动模式影响：
+
+```
+执行时序：
+  init() 链运行                    main() 运行
+  │                              │
+  ├─ config.init()               ├─ "-install YES" → dbscript.Install()
+  │                              │   └─ DROP/CREATE 框架核心表 + 种子数据 + 模块 SQL
+  ├─ ...                         │
+  ├─ modules/demo.init()         ├─ 正常启动 → hs.Start()
+  │   └─ AutoMigrate(&DemoOrder) │
+  │       ↑ 自定义表已在此创建      │
+```
+
+无论 `go run .`（正常启动）还是 `go run . -install YES`，模块 `init()` 都会执行，`AutoMigrate` 都会运行。差异在于：
+- **正常启动**：`init()` 建表 → `Start()` → HTTP 服务就绪
+- **`-install YES`**：`init()` 建表 → `Install()` 重置框架核心表 + 种子数据 + 模块 SQL → 退出
+
 | 阶段 | 推荐方式 | 说明 |
 |------|----------|------|
 | 开发期 | `AutoMigrate` 写在 `init()` 中 | 幂等，随服务启动自动同步 |
 | 生产环境 | 独立迁移脚本 | 固化 DDL 变更，版本可控 |
 
 `AutoMigrate` 行为：仅新增表和列，不修改/删除已有字段，**数据安全**。
+
+### 模块安装 SQL
+
+如果模块需要更精细的数据库初始化（如表结构变更、种子数据），可以通过 `dbscript.RegisterInstallSQL()` 注册安装 SQL，在 `-install YES` 时自动执行。
+
+**1. 创建 SQL 文件** `modules/demo/install.sql`
+
+```sql
+DROP TABLE IF EXISTS demo_order;
+CREATE TABLE demo_order (
+    id       INT AUTO_INCREMENT PRIMARY KEY,
+    user_id  VARCHAR(64) NOT NULL,
+    amount   DECIMAL(10,2) NOT NULL,
+    status   INT DEFAULT 0
+);
+
+INSERT INTO demo_order (user_id, amount, status) VALUES ('seed_user', 100.00, 1);
+```
+
+**2. 注册到安装流程** `modules/demo/module.go`
+
+```go
+package demo
+
+import (
+    _ "embed"
+    "github.com/wilder2000/GOSimple/database"
+    "github.com/wilder2000/GOSimple/dbscript"
+    "github.com/wilder2000/GOSimple/http"
+)
+
+//go:embed install.sql
+var installSQL string
+
+func init() {
+    http.RegObject[DemoOrder]("demo_order")
+    http.RegMapping[OrderCreateRequest](&OrderCreateController{})
+    database.DBHander.AutoMigrate(&DemoOrder{})
+
+    // 注册安装 SQL，-install YES 时在框架核心表之后自动执行
+    dbscript.RegisterInstallSQL("demo", installSQL)
+}
+```
+
+**3. 执行安装**
+
+```bash
+go run . -install YES
+```
+
+**安装完整顺序**：
+```
+同一事务内:
+  step 1  框架核心表 (initdb.sql)
+  step 2  URL 映射
+  step 3  种子数据 (管理员、角色、组)
+  step 4  模块注册的 install SQL ← 新增，按注册顺序执行
+```
+
+**与 AutoMigrate 的关系**：
+- `init()` 阶段：`AutoMigrate` 先执行（幂等建表，正常启动时处理演化）
+- `-install YES` 阶段：模块 SQL 后执行（`DROP TABLE IF EXISTS` + `CREATE TABLE` 重建，确保表结构与 SQL 完全一致）
 
 ### 二开可复用的框架能力
 
@@ -609,6 +692,7 @@ config.init() → database.init() → glog.init() → http.init() → modules/*.
 | Excel 导出 | 通用查询 `attach: true` | 自动导出为 `.xlsx` |
 | 验证器 | `go-playground/validator` | 内置中文翻译 |
 | UUID / MD5 / bcrypt | `comm.UUID()` / `comm.MD5()` / `comm.EPassword()` | 开箱即用 |
+| 模块安装 SQL | `dbscript.RegisterInstallSQL(name, sql)` | embed SQL 文件，`-install YES` 时自动执行 |
 
 ---
 
