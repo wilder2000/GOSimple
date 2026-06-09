@@ -122,7 +122,8 @@ func registGinFunc(rg *gin.RouterGroup, path string, hf gin.HandlerFunc) {
 
 // Start http server startWebServer func
 
-func startWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController, install bool, adminHandler gin.HandlerFunc) {
+func startWebServer(address string, readout time.Duration, wout time.Duration, actions []HttpController, noauthActions []HttpController, install bool) {
+	startTime := time.Now()
 
 	router := gin.Default()
 	staticDir := config.AConfig.StaticDir
@@ -139,11 +140,8 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 		glog.Logger.InfoF("no mapping www path config.")
 	}
 
-	if adminHandler != nil {
-		router.Any("/admin", adminHandler)
-		router.Any("/admin/*filepath", adminHandler)
-		glog.Logger.InfoF("Admin UI mounted at /admin")
-	}
+	router.Any("/admin/*filepath", adminHandler)
+	glog.Logger.InfoF("Admin UI mounted at /admin")
 
 	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 		// your custom format
@@ -206,6 +204,15 @@ func startWebServer(address string, readout time.Duration, wout time.Duration, a
 				glog.Logger.InfoF("Http Server started success. Binding :%s", address)
 			}
 		}()
+
+		glog.Logger.Info("----------------------------------------------------------")
+		glog.Logger.InfoF("Server startup complete")
+		glog.Logger.InfoF("  Listen:      %s", address)
+		glog.Logger.InfoF("  Admin UI:    http://localhost%s/admin", address)
+		glog.Logger.InfoF("  Routes:      %d auth + %d no-auth", len(mappings), len(noAuthMappings))
+		glog.Logger.InfoF("  Database:    %s (%s)", config.AConfig.DataSource.Name, config.AConfig.DataSource.Type)
+		glog.Logger.InfoF("  Startup:     %v", time.Since(startTime).Round(time.Millisecond))
+		glog.Logger.Info("----------------------------------------------------------")
 
 		// Wait for interrupt signal to gracefully shutdown the server with
 		// a timeout of 5 seconds.

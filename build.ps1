@@ -28,6 +28,11 @@ try {
     Pop-Location
 }
 
+# 2b. Copy dist to http/webdist for Go embed
+Write-Host "Copying frontend dist for embed ..." -ForegroundColor Yellow
+Copy-Item -Path (Join-Path $rootDir "web\dist") -Destination (Join-Path $rootDir "http\webdist") -Recurse -Force
+Write-Host "  OK" -ForegroundColor Green
+
 # 3. Build Go binary
 Write-Host "Building Go binary ..." -ForegroundColor Yellow
 $binaryName = "GOSimple.exe"

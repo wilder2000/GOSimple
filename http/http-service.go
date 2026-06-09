@@ -2,8 +2,6 @@ package http
 
 import (
 	"time"
-
-	"github.com/gin-gonic/gin"
 )
 
 type HttpServerConfig struct {
@@ -16,7 +14,6 @@ type HttpServer struct {
 	Config        HttpServerConfig
 	Actions       []HttpController
 	NoAuthActions []HttpController
-	AdminHandler  gin.HandlerFunc
 }
 
 func (hs *HttpServer) AppendActions(ac ...HttpController) {
@@ -28,12 +25,12 @@ func (hs *HttpServer) AppendNoAuthActions(ac ...HttpController) {
 
 // start a http server
 func (hs *HttpServer) Start() {
-	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, false, hs.AdminHandler)
+	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, false)
 }
 
 // install sm database script.
 func (hs *HttpServer) Install() {
-	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, true, nil)
+	startWebServer(hs.Address, *hs.Config.ReadTimeout, *hs.Config.WriteTimeout, hs.Actions, hs.NoAuthActions, true)
 }
 
 func CreateHttpServer(address string, config ...HttpServerConfig) *HttpServer {

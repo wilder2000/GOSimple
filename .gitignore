@@ -1,3 +1,7 @@
 *.exe
 node_modules
 dist
+# Build output
+build/
+# Logs
+*.log

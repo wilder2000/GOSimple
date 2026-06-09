@@ -5,12 +5,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/gin-gonic/gin"
 	"github.com/wilder2000/GOSimple/config"
 	"github.com/wilder2000/GOSimple/http"
 )
 
-func Run(adminHandler ...gin.HandlerFunc) {
+func Run() {
 	fmt.Println("GOSimple")
 
 	args := os.Args[1:]
@@ -27,8 +26,5 @@ func Run(adminHandler ...gin.HandlerFunc) {
 	}
 
 	hs := http.CreateHttpServer(config.AConfig.Port)
-	if len(adminHandler) > 0 {
-		hs.AdminHandler = adminHandler[0]
-	}
 	hs.Start()
 }
