@@ -6,9 +6,12 @@ import (
 )
 
 func FormatValidation(err error) []string {
+	errs, ok := err.(validator.ValidationErrors)
+	if !ok {
+		return []string{"参数格式错误"}
+	}
 	var errors []string
-	for _, e := range err.(validator.ValidationErrors) {
-
+	for _, e := range errs {
 		errors = append(errors, e.Translate(Trans))
 	}
 	return errors
