@@ -14,13 +14,9 @@ const (
 )
 
 var (
-	urlEntries map[string]int32
+	urlEntries = make(map[string]int32)
 	urlMu      sync.RWMutex
 )
-
-func init() {
-	urlEntries = make(map[string]int32)
-}
 
 func RegisterURL(url string, operatorID int32) {
 	urlMu.Lock()
