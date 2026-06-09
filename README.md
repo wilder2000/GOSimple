@@ -602,6 +602,7 @@ config.init() → database.init() → glog.init() → http.init() → modules/*.
 |------|------|------|
 | 通用 CRUD | `http.RegObject[T]("name")` | 一行注册，自动生成 `/mif/{c,q,u,d}` 接口 |
 | 自定义接口 | `http.RegMapping[T](ctrl)` | 实现 `HTTPController[T]` 接口即可 |
+| 免认证接口 | `http.RegNoAuthMapping(path, handler)` | 注册不经过 JWT+RBAC 的路由，适合回调/webhook |
 | RBAC 权限 | `OperatorId() int32` | 为 Controller 声明权限归属 |
 | 线程池 | `pool.New[T](size, th, proc)` | 泛型异步任务处理 |
 | 日志 | `glog.Logger.InfoF(...)` | 基于 Zap + Lumberjack |

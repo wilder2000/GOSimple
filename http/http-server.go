@@ -67,6 +67,11 @@ func RegMapping[M any](c HTTPController[M]) {
 	}
 }
 
+func RegNoAuthMapping(path string, handler gin.HandlerFunc) {
+	noAuthMappings[path] = handler
+	glog.Logger.InfoF("Register no-auth mapping: %s", path)
+}
+
 func initController(e *gin.Engine) (*gin.RouterGroup, []string) {
 	uh := NewUserHandler(UserProxy)
 	e.POST("/api/emllogin", uh.EmailLogin)
