@@ -315,6 +315,207 @@ go run .
 
 ---
 
+## Web 前端 API 层
+
+前端（`web/src/api/`）提供与 Go 后端接口 1:1 映射的 TypeScript 封装，所有请求/响应类型均直接从 Go struct 生成。
+
+### 类型定义（`api/types.ts`）
+
+| Go Struct | TS Interface | 说明 |
+|-----------|-------------|------|
+| `LoginInput` | `LoginInput` | 邮箱密码登录 |
+| `LoginResult` | `LoginResult` | 登录返回数据（`user_id`, `token`） |
+| `RegisterUserInput` | `RegisterUserInput` | 注册请求 |
+| `RegistUserInput` | `RegistUserInput` | UID 注册/登录请求 |
+| `LoginExistInput` | `LoginExistInput` | UID 登录请求 |
+| `ChangePWD` | `ChangePWD` | 修改密码 |
+| `CheckPWD` | `CheckPWD` | 验证密码 |
+| `QRequest` | `QRequest` | MIF 通用查询 |
+| `ARequest` | `ARequest` | MIF 通用创建 |
+| `URequest` | `URequest` | MIF 通用更新 |
+| `DRequest` | `DRequest` | MIF 通用删除 |
+| `AddRoleRequest` | `AddRoleRequest` | 添加角色 |
+| `GetRequest` | `GetRequest` | 单条查询（`upro`） |
+| `UpdateRequest` | `UpdateRequest` | 更新操作（`um`） |
+| `UserFormatter` | `UserFormatter` | 用户完整信息格式 |
+| `ErrorsInput` | `ErrorsInput` | 客户端错误上报 |
+| — | `QResponse<T>` | 分页响应（`HttpResponse<DataResponse<T>>`） |
+| — | `SuccessResponse<T>` | 通用成功响应（`HttpResponse<T>`） |
+
+### 通用 CRUD（`api/mif.ts`）
+
+基于 MIF 框架，一行代码即可对已注册的任意模型进行增删改查。
+
+```typescript
+import { query, create, update, remove, queryAll } from '../api/mif'
+
+// 查询（分页）
+const res = await query({ 
+  Target: 'user',               // 对应 Go 中 http.RegObject 注册的名称
+  PageSize: 20,
+  Where: { state: 1 },
+})
+console.log(res.data.Data)      // T[]
+console.log(res.data.TotalRows) // 总条数
+
+// 查询所有（不分页）
+const all = await queryAll('role')
+
+// 创建
+await create('role', { name: '新角色' })
+
+// 更新
+await update('user', { id: 'xxx' }, { name: '新名字' })
+
+// 删除
+await remove('user', { id: 'xxx' })
+```
+
+#### 联合查询辅助函数（特殊 Cmd 接口）
+
+后端部分专有控制器（`ug`/`rm`/`dm` 等）返回关联关系的"已选/可选"数据，前端已封装对应函数：
+
+```typescript
+import { queryUserGroups, queryUnionUsers, queryUnionRoles, 
+         queryOperators, queryUnionDepartments } from '../api/mif'
+
+// 查询用户加入的编组（Cmd 1200）
+const res = await queryUserGroups({ userid: 'xxx' })
+
+// 查询编组下已选的用户和未选的用户（Cmd 1203）
+const res = await queryUnionUsers({ groupid: 1, name: '' })
+// res.data.Data 中每一项包含 selected 字段标识是否已关联
+
+// 查询编组已选/未选的角色（Cmd 1204）
+const res = await queryUnionRoles({ groupid: 1 })
+
+// 查询角色的已选/未选操作权限（Cmd 1205）
+const res = await queryOperators({ rid: 1, name: '' })
+
+// 查询部门的已选/未选用户（Cmd 1206）
+const res = await queryUnionDepartments({ depid: 1 })
+```
+
+#### 查询条件语法
+
+`Where` 中的 key 支持操作符后缀，与后端 `http/http-query.go` 一致：
+
+```typescript
+await query({
+  Target: 'user',
+  Where: {
+    'name like': '%张%',   // LIKE
+    'age >': 18,            // 大于
+    'state !': 0,           // 不等于
+    'id in': ['a','b'],     // IN
+  }
+})
+```
+
+### 认证接口（`api/auth.ts`）
+
+```typescript
+import { login, registerUser, changePassword, requestUser, addRole, 
+         uploadAvatar, reportError } from '../api/auth'
+import { handleLoginResult } from '../api/auth'
+
+// 登录（form-urlencoded，管理后台）
+const res = await login('admin@example.com', 'admin@123')
+handleLoginResult(res) // 自动保存 token
+
+// 注册（JSON）
+await registerUser({ email: 'new@test.com', password: '123456' })
+
+// 修改密码（需 JWT）
+await changePassword({ Email: 'user@test.com', Password: 'newPwd', RePassword: 'newPwd' })
+
+// 获取用户信息（需 JWT）
+const res = await requestUser('xxx-uuid')
+console.log(res.data) // 用户详情
+
+// 添加角色（需 JWT）
+await addRole('财务主管')
+
+// 上传头像（multipart/form-data）
+const fd = new FormData()
+fd.append('title', 'avatar.png')
+fd.append('email', 'user@test.com')
+fd.append('file', fileInput.files[0])
+await uploadAvatar(fd)
+
+// 上报客户端错误
+await reportError({ uuid: 'xxx', envinfo: navigator.userAgent, detail: '错误详情' })
+```
+
+### 命令码（`api/codes.ts`）
+
+```typescript
+import { ECode, ECmd, EUserState } from '../api/codes'
+
+// 响应码
+if (res.code === ECode.SUCCESS) { /* 成功 */ }
+
+// 命令码 —— 用于特殊控制器路由
+const cmd = ECmd.QueryUnionOperators // = 1205
+
+// 用户状态
+if (state === EUserState.Enable) { /* 启用 */ }
+```
+
+### 响应类型（`types/response.ts`）
+
+所有 API 返回统一结构：
+
+```typescript
+// 通用响应包装
+interface HttpResponse<T> {
+  message: string
+  code: number
+  data: T
+}
+
+// 分页数据
+interface DataResponse<T> {
+  PageIndex: number
+  PageSize: number
+  TotalPages: number
+  TotalRows: number
+  Data: T[]
+}
+```
+
+完整的分页查询调用示例：
+
+```typescript
+import type { QResponse } from '../api/types'
+
+const res = await query({ Target: 'log', PageIndex: 1, PageSize: 10 })
+// res: QResponse<LogItem>
+// res.data.Data      → LogItem[]
+// res.data.TotalRows → number
+```
+
+### 底层请求工具（`utils/request.ts`）
+
+```typescript
+import { Get, PostJson, PostForm, PostFormData } from '../utils/request'
+
+// JSON body
+const res = await PostJson('/v1/some-route', { key: 'value' })
+
+// Form-urlencoded
+const params = new URLSearchParams()
+params.append('field', 'value')
+const res = await PostForm('/api/some-route', params)
+
+// Multipart file upload
+const fd = new FormData()
+fd.append('file', file)
+const res = await PostFormData('/v1/upload', fd)
+```
+
+---
+
 ## 数据库模型
 
 系统包含以下数据库表（位于 `dbscript/MySQL/initdb.sql`）：
