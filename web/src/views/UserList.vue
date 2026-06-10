@@ -27,7 +27,7 @@
               <td>{{ u.name || '-' }}</td>
               <td>{{ u.mobile || '-' }}</td>
               <td>{{ u.sex === 1 ? '男' : u.sex === 0 ? '女' : '未知' }}</td>
-              <td><span class="badge" :class="u.state === 1 ? 'bg-success' : 'bg-secondary'">{{ u.state === 1 ? '启用' : '禁用' }}</span></td>
+              <td><span class="badge" :class="stateBadge(u.state)">{{ stateLabel(u.state) }}</span></td>
               <td>{{ u.createtime?.slice(0, 10) }}</td>
               <td>
                 <router-link :to="`/users/${u.id}/edit`" class="btn btn-sm btn-outline-primary me-1"><i class="bi bi-pencil"></i></router-link>
@@ -81,4 +81,16 @@ async function del(u: any) {
 }
 
 onMounted(() => loadData())
+
+function stateLabel(s: number): string {
+  const m: Record<number, string> = { 0: '管理员', 1: '正常', 2: '自动注册', 3: 'VIP', 4: 'SVIP', 999: '锁定' }
+  return m[s] || '未知'
+}
+function stateBadge(s: number): string {
+  if (s === 1) return 'bg-success'
+  if (s === 999) return 'bg-danger'
+  if (s === 0 || s === 2) return 'bg-info'
+  if (s === 3 || s === 4) return 'bg-warning text-dark'
+  return 'bg-secondary'
+}
 </script>
