@@ -7,12 +7,12 @@
     <div class="card card-table">
       <div class="table-responsive">
         <table class="table table-hover mb-0">
-          <thead class="table-light"><tr><th>ID</th><th>账号</th><th>IP</th><th>登录时间</th></tr></thead>
+          <thead class="table-light"><tr><th>ID</th><th>账号</th><th>IP</th><th>状态</th><th>登录时间</th></tr></thead>
           <tbody>
             <tr v-for="l in list" :key="l.id">
-              <td>{{ l.id }}</td><td>{{ l.account }}</td><td>{{ l.ip }}</td><td>{{ l.logintime?.slice(0, 19) }}</td>
+              <td>{{ l.id }}</td><td>{{ l.account }}</td><td>{{ l.ip }}</td><td><span :class="l.status === 1 ? 'text-success' : 'text-danger'">{{ l.status === 1 ? '成功' : '失败' }}</span></td><td>{{ l.logintime?.slice(0, 19) }}</td>
             </tr>
-            <tr v-if="!list.length"><td colspan="4" class="text-center text-muted py-4">暂无数据</td></tr>
+            <tr v-if="!list.length"><td colspan="5" class="text-center text-muted py-4">暂无数据</td></tr>
           </tbody>
         </table>
       </div>

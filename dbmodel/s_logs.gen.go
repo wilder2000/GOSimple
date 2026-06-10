@@ -17,6 +17,7 @@ type SLog struct {
 	ID        int32     `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
 	Account   string    `gorm:"column:account" json:"account"`
 	IP        string    `gorm:"column:ip" json:"ip"`
+	Status    int32     `gorm:"column:status;default:1" json:"status"`
 	Logintime time.Time `gorm:"column:logintime;not null" json:"logintime"`
 }
 

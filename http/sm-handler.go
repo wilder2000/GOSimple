@@ -152,7 +152,7 @@ func (h *userHandler) UIDLoginRegist(c *gin.Context) {
 			}
 		}
 
-		dblog(user, c.Request.RemoteAddr)
+		dblog(user.ID, c.ClientIP(), 1)
 		glog.Logger.InfoF("GenerateToken user%v", user.ID)
 		_, err3 := RefreshToken(*c, user.ID)
 		if err3 != nil {
@@ -165,6 +165,7 @@ func (h *userHandler) UIDLoginRegist(c *gin.Context) {
 		c.JSON(hp.StatusOK, SuccessResponse(formatter))
 
 	} else {
+		dblog(input.Uid, c.ClientIP(), 0)
 		c.JSON(hp.StatusOK, FailedResponseCode(CommParaFormat, "Account creation failed", nil))
 		return
 	}
@@ -187,11 +188,12 @@ func (h *userHandler) UIDLoginWithExist(c *gin.Context) {
 		if tx.RowsAffected <= 0 {
 			msg := fmt.Sprintf("login failed for user not found. %s", user.ID)
 			glog.Logger.Error(msg)
+			dblog(input.Uid, c.ClientIP(), 0)
 			c.JSON(hp.StatusOK, FailedResponseCode(RFailed, msg, nil))
 			return
 		}
 
-		dblog(user, c.Request.RemoteAddr)
+		dblog(user.ID, c.ClientIP(), 1)
 		glog.Logger.InfoF("GenerateToken user%v", user.ID)
 		_, err3 := RefreshToken(*c, user.ID)
 		if err3 != nil {
@@ -204,6 +206,7 @@ func (h *userHandler) UIDLoginWithExist(c *gin.Context) {
 		c.JSON(hp.StatusOK, SuccessResponse(formatter))
 
 	} else {
+		dblog(input.Uid, c.ClientIP(), 0)
 		c.JSON(hp.StatusOK, FailedResponseCode(CommParaFormat, "Account creation failed", nil))
 		return
 	}
@@ -229,10 +232,12 @@ func (h *userHandler) MobileLogin(c *gin.Context) {
 				c.JSON(hp.StatusOK, FailedResponseCode(RFailed, "Login failed", nil))
 				return
 			}
+			dblog(mobile, c.ClientIP(), 1)
 			c.JSON(hp.StatusOK, SuccessResponse("login success."))
 		}
 
 	} else {
+		dblog(mobile, c.ClientIP(), 0)
 		c.JSON(hp.StatusOK, FailedResponseCode(CommParaFormat, "mobile code  failed", "code invalid"))
 		return
 	}
@@ -373,7 +378,7 @@ func (h *userHandler) EmailLogin(c *gin.Context) {
 	if err2 != nil {
 		glog.Logger.InfoF("Login but not found user in db,user=%s,for error:%s", input.Email, err2.Error())
 		errorMessage := gin.H{"errors": "认证失败"}
-
+		dblog(input.Email, c.ClientIP(), 0)
 		c.JSON(hp.StatusOK, FailedResponseCode(err2.Code(), "Login failed", errorMessage))
 		return
 	}
@@ -391,6 +396,7 @@ func (h *userHandler) EmailLogin(c *gin.Context) {
 	}
 	formatter.Department = deps
 	SaveUser(&loggeninUser)
+	dblog(input.Email, c.ClientIP(), 1)
 	c.JSON(hp.StatusOK, SuccessResponse(formatter))
 }
 func FindUserDeps(uid string) ([]dbmodel.SDepartment, error) {
