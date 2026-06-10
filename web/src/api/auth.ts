@@ -1,4 +1,5 @@
 import request from '../utils/request'
+import { saveToken } from '../utils/token'
 
 export interface LoginResult {
   message: string
@@ -16,4 +17,10 @@ export function login(email: string, password: string) {
   return request.post<any, LoginResult>('/emllogin', params, {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   })
+}
+
+export function handleLoginResult(res: LoginResult) {
+  if (res.data?.token) {
+    saveToken(res.data.token)
+  }
 }

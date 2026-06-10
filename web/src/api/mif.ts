@@ -1,14 +1,10 @@
-import request from '../utils/request'
+import { PostJson } from '../utils/request'
+import type { HttpResponse, DataResponse } from '../types/response'
+import { QueryRequest, UpdateRequest, DelRequest, JSONCreateRequest } from './requests'
 
-export interface PageData<T> {
-  PageIndex: number
-  PageSize: number
-  TotalPages: number
-  TotalRows: number
-  Data: T[]
-}
+export type QResponse<T = any> = HttpResponse<DataResponse<T>>
 
-export interface QueryParams {
+type QueryInput = QueryRequest | {
   Target: string
   Where?: Record<string, any>
   PageIndex?: number
@@ -17,31 +13,38 @@ export interface QueryParams {
   Fields?: string[]
 }
 
-export interface QResponse {
-  message: string
-  code: number
-  data: PageData<any>
+export function query<T = any>(req: QueryInput) {
+  const payload = req instanceof QueryRequest ? req : {
+    Target: req.Target,
+    PageIndex: req.PageIndex ?? 1,
+    PageSize: req.PageSize ?? 15,
+    Where: req.Where,
+    Order: req.Order,
+    Fields: req.Fields,
+  }
+  return PostJson<QResponse<T>>('/v1/mif/q', payload)
 }
 
-export function query<T = any>(params: QueryParams) {
-  return request.post<any, QResponse>('/v1/mif/q', params)
+export function create(target: string, data: Record<string, any>) {
+  const req = new JSONCreateRequest(target, data)
+  return PostJson('/v1/mif/c', req)
 }
 
-export function create(Target: string, data: Record<string, any>) {
-  return request.post('/v1/mif/c', {
-    Target,
-    ObjectString: JSON.stringify(data),
-  })
+export function update(target: string, where: Record<string, any>, fields: Record<string, any>) {
+  const req = new UpdateRequest(0, target)
+  req.Where = where
+  req.Fields = fields
+  return PostJson('/v1/mif/u', req)
 }
 
-export function update(Target: string, where: Record<string, any>, fields: Record<string, any>) {
-  return request.post('/v1/mif/u', { Target, Where: where, Fields: fields })
-}
-
-export function remove(Target: string, where: Record<string, any>) {
-  return request.post('/v1/mif/d', { Target, Where: where })
+export function remove(target: string, where: Record<string, any>) {
+  const req = new DelRequest(0, target)
+  req.Where = where
+  return PostJson('/v1/mif/d', req)
 }
 
 export function queryAll(target: string): Promise<any[]> {
-  return query({ Target: target, PageSize: 9999 }).then((res) => res.data.Data || [])
+  const req = new QueryRequest(0, target)
+  req.PageSize = 9999
+  return PostJson<QResponse>('/v1/mif/q', req).then((res) => res.data.Data || [])
 }
