@@ -30,12 +30,11 @@ var (
 )
 
 func init() {
-	if config.AConfig.UserService {
-		database.LoadDatabaseConfig()
+	database.LoadDatabaseConfig()
+	if database.DBHander != nil {
 		UserProxy = NewService()
 	}
 	glog.Logger.InfoF("gogo user service start success.")
-
 }
 func NewService() *service {
 	userRepository := NewRepository(database.DBHander)

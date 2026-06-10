@@ -39,6 +39,7 @@ type QResponse struct {
 	PageIndex  int    `json:"PageIndex"`
 	PageSize   int    `json:"PageSize"`
 	TotalPages int    `json:"TotalPages"`
+	TotalRows  int64  `json:"TotalRows"`
 	Message    string `json:"message"`
 	Code       int    `json:"code"`
 	Attach     string `json:"attach"`

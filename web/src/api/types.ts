@@ -16,10 +16,9 @@ export interface LoginInput {
   password: string
 }
 
-export interface LoginResult {
-  user_id: string
-  token: string
-}
+// Login response: body contains UserFormatter, token is in Authorization header
+export type LoginResponse = HttpResponse<UserFormatter>
+export type LoginResult = UserFormatter
 
 export interface RegisterUserInput {
   email: string

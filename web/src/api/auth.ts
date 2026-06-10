@@ -1,22 +1,10 @@
-import request, { PostJson, PostForm, PostFormData } from '../utils/request'
-import { saveToken } from '../utils/token'
-import type { HttpResponse, RegisterUserInput, RegistUserInput, ChangePWD, CheckPWD, ErrorsInput, SuccessResponse, LoginResult } from './types'
-export type { LoginResult }
+import { PostJson, PostForm, PostFormData } from '../utils/request'
+import type { HttpResponse, RegisterUserInput, RegistUserInput, ChangePWD, CheckPWD, ErrorsInput, SuccessResponse, LoginResponse, UserFormatter } from './types'
+export type { UserFormatter as LoginResult }
 
-// ── Login (form-urlencoded) ─────────────────────────────────
+// ── Login (JSON, matches Go ShouldBindJSON) ─────────────────
 export function login(email: string, password: string) {
-  const params = new URLSearchParams()
-  params.append('Email', email)
-  params.append('Password', password)
-  return request.post<any, HttpResponse<LoginResult>>('/emllogin', params, {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  })
-}
-
-export function handleLoginResult(res: HttpResponse<LoginResult>) {
-  if (res.data?.token) {
-    saveToken(res.data.token)
-  }
+  return PostJson<HttpResponse<UserFormatter>>('/emllogin', { email, password })
 }
 
 // ── Register (JSON) ─────────────────────────────────────────
@@ -45,17 +33,17 @@ export function mobileLogin(mobile: string, vcode: string) {
   const params = new URLSearchParams()
   params.append('mobile', mobile)
   params.append('vcode', vcode)
-  return PostForm<HttpResponse<LoginResult>>('/moblogin', params)
+  return PostForm<LoginResponse>('/moblogin', params)
 }
 
 // ── New registration with UID (JSON) ────────────────────────
 export function uidLoginRegist(data: RegistUserInput) {
-  return PostJson<HttpResponse<LoginResult>>('/newreglogin', data)
+  return PostJson<LoginResponse>('/newreglogin', data)
 }
 
 // ── Login with existing UID (JSON) ──────────────────────────
 export function uidLoginWithExist(data: { uuid: string; accesskey?: string; secretkey?: string }) {
-  return PostJson<HttpResponse<LoginResult>>('/loginexist', data)
+  return PostJson<LoginResponse>('/loginexist', data)
 }
 
 // ── Change password (auth) ──────────────────────────────────

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { login } from '../api/auth'
 import { loadToken, saveToken, clearAuth, loadUser, saveUser } from '../utils/token'
-import type { LoginResult } from '../api/auth'
+import type { UserFormatter } from '../api/types'
 
 export const useAuthStore = defineStore('auth', () => {
   const token = ref(loadToken())
@@ -16,8 +16,12 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function doLogin(email: string, password: string) {
+    // 1. login() sends JSON POST /api/emllogin, returns HttpResponse<UserFormatter>
+    // 2. Axios interceptor saves JWT from Authorization header to localStorage
     const res = await login(email, password)
-    setAuth(res.data.token, { user_id: res.data.user_id })
+    // res = { message, code, data: UserFormatter }
+    const userData: UserFormatter = res.data
+    setAuth(loadToken(), { user_id: userData.id, ...userData })
     return res
   }
 

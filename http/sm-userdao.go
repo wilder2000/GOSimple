@@ -33,7 +33,7 @@ func (r *repository) Save(user dbmodel.SUser) (dbmodel.SUser, error) {
 // FindByEmail 只用于管理员
 func (r *repository) FindByEmail(email string) (dbmodel.SUser, error) {
 	var user dbmodel.SUser
-	err := r.db.Where("id = ? and state = ?", email, StateAdmin).Find(&user).Error
+	err := r.db.Where("email = ? and state = ?", email, StateAdmin).Find(&user).Error
 	if err != nil {
 		return user, err
 	}

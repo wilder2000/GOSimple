@@ -183,6 +183,7 @@ func QueryObject[T any](para *QRequest, c *gin.Context) {
 		qres.PageSize = res.PageSize
 		qres.PageIndex = res.PageIndex
 		qres.TotalPages = res.TotalPages
+		qres.TotalRows = res.TotalRows
 		qres.Data = res.Rows
 		if para.Attach && len(res.Rows) > 1 {
 

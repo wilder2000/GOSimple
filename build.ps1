@@ -1,5 +1,7 @@
 param (
-    [string]$OutputDir = "build"
+    [string]$OutputDir = "build",
+    [string]$PublishDir = "",
+    [switch]$OverwriteConf = $false
 )
 
 $ErrorActionPreference = "Stop"
@@ -28,9 +30,14 @@ try {
     Pop-Location
 }
 
-# 2b. Copy dist to http/webdist for Go embed
+# 2b. Copy dist contents to http/webdist for Go embed (clean first to remove stale hash files)
 Write-Host "Copying frontend dist for embed ..." -ForegroundColor Yellow
-Copy-Item -Path (Join-Path $rootDir "web\dist") -Destination (Join-Path $rootDir "http\webdist") -Recurse -Force
+$webdistDir = Join-Path $rootDir "http\webdist"
+if (Test-Path $webdistDir) {
+    Remove-Item -Path "$webdistDir\*" -Recurse -Force
+}
+# Copy-Item with trailing "\*" copies contents, not the source folder itself
+Copy-Item -Path "$(Join-Path $rootDir 'web\dist')\*" -Destination $webdistDir -Recurse
 Write-Host "  OK" -ForegroundColor Green
 
 # 3. Build Go binary
@@ -45,5 +52,26 @@ Write-Host "  -> $OutputDir/$binaryName" -ForegroundColor Green
 Write-Host "Copying runtime files ..." -ForegroundColor Yellow
 Copy-Item -Path (Join-Path $rootDir "conf") -Destination $buildDir -Recurse
 Write-Host "  -> conf/" -ForegroundColor Green
+
+# 5. Publish to custom directory (optional)
+if ($PublishDir) {
+    $pubDir = $PublishDir
+    if (-not [System.IO.Path]::IsPathRooted($pubDir)) {
+        $pubDir = Join-Path $rootDir $PublishDir
+    }
+    Write-Host "Publishing to $pubDir ..." -ForegroundColor Yellow
+    if (-not (Test-Path $pubDir)) {
+        New-Item -ItemType Directory -Path $pubDir -Force | Out-Null
+    }
+    Copy-Item -Path $outputPath -Destination (Join-Path $pubDir $binaryName) -Force
+    $pubConf = Join-Path $pubDir "conf"
+    if ($OverwriteConf -or -not (Test-Path $pubConf)) {
+        Copy-Item -Path (Join-Path $rootDir "conf") -Destination $pubDir -Recurse -Force
+        Write-Host "  -> conf/ (overwritten)" -ForegroundColor Green
+    } else {
+        Write-Host "  -> conf/ (skipped, use -OverwriteConf to replace)" -ForegroundColor DarkYellow
+    }
+    Write-Host "  OK" -ForegroundColor Green
+}
 
 Write-Host "=== Build complete ===" -ForegroundColor Cyan
